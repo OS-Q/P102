@@ -1,0 +1,7 @@
+{
+    "name": "framework-N20",
+    "description": "Arduino Framework N20(Teensy Core)",
+    "system": "*",
+    "url": "https://github.com/PaulStoffregen/cores",
+    "version":"1.147.0"
+}
