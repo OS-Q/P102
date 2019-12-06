@@ -12,24 +12,17 @@
 
 #include <Wire.h>
 
-int led = LED_BUILTIN;
-
-void setup()
-{
-  pinMode(led, OUTPUT);
+void setup() {
   Wire.begin(); // join i2c bus (address optional for master)
 }
 
 byte x = 0;
 
-void loop()
-{
-  digitalWrite(led, HIGH);    // briefly flash the LED
-  Wire.beginTransmission(9);  // transmit to device #9
+void loop() {
+  Wire.beginTransmission(8); // transmit to device #8
   Wire.write("x is ");        // sends five bytes
   Wire.write(x);              // sends one byte
-  Wire.endTransmission();     // stop transmitting
-  digitalWrite(led, LOW);
+  Wire.endTransmission();    // stop transmitting
 
   x++;
   delay(500);

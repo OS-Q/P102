@@ -1,1263 +1,1068 @@
-menu.usb=USB Type
-menu.speed=CPU Speed
-menu.opt=Optimize
-menu.keys=Keyboard Layout
+# See: http://code.google.com/p/arduino/wiki/Platforms
 
-teensy40.name=Teensy 4.0
-teensy40.upload.maximum_size=2031616
-teensy40.upload.maximum_data_size=1048576
-teensy40.upload.tool=teensyloader
-teensy40.upload.protocol=halfkay
-teensy40.build.board=TEENSY40
-teensy40.build.core=teensy4
-teensy40.build.mcu=imxrt1062
-teensy40.build.warn_data_percentage=99
-teensy40.build.toolchain=arm/bin/
-teensy40.build.command.gcc=arm-none-eabi-gcc
-teensy40.build.command.g++=arm-none-eabi-g++
-teensy40.build.command.ar=arm-none-eabi-gcc-ar
-teensy40.build.command.objcopy=arm-none-eabi-objcopy
-teensy40.build.command.objdump=arm-none-eabi-objdump
-teensy40.build.command.linker=arm-none-eabi-gcc
-teensy40.build.command.size=arm-none-eabi-size
-teensy40.build.flags.common=-g -Wall -ffunction-sections -fdata-sections -nostdlib
-teensy40.build.flags.dep=-MMD
-teensy40.build.flags.optimize=-Os
-teensy40.build.flags.cpu=-mthumb -mcpu=cortex-m7 -mfloat-abi=hard -mfpu=fpv5-d16
-teensy40.build.flags.defs=-D__IMXRT1062__ -DTEENSYDUINO=147
-teensy40.build.flags.cpp=-std=gnu++14 -fno-exceptions -fpermissive -fno-rtti -fno-threadsafe-statics -felide-constructors -Wno-error=narrowing
-teensy40.build.flags.c=
-teensy40.build.flags.S=-x assembler-with-cpp
-teensy40.build.flags.ld=-Wl,--gc-sections,--relax "-T{build.core.path}/imxrt1062.ld"
-teensy40.build.flags.libs=-larm_cortexM7lfsp_math -lm -lstdc++
-teensy40.build.fcpu=600000000
-teensy40.serial.restart_cmd=false
-teensy40.menu.usb.serial=Serial
-teensy40.menu.usb.serial.build.usbtype=USB_SERIAL
-#teensy40.menu.usb.keyboard=Keyboard
-#teensy40.menu.usb.keyboard.build.usbtype=USB_KEYBOARDONLY
-#teensy40.menu.usb.keyboard.fake_serial=teensy_gateway
-#teensy40.menu.usb.touch=Keyboard + Touch Screen
-#teensy40.menu.usb.touch.build.usbtype=USB_TOUCHSCREEN
-#teensy40.menu.usb.touch.fake_serial=teensy_gateway
-#teensy40.menu.usb.hidtouch=Keyboard + Mouse + Touch Screen
-#teensy40.menu.usb.hidtouch.build.usbtype=USB_HID_TOUCHSCREEN
-#teensy40.menu.usb.hidtouch.fake_serial=teensy_gateway
-#teensy40.menu.usb.hid=Keyboard + Mouse + Joystick
-#teensy40.menu.usb.hid.build.usbtype=USB_HID
-#teensy40.menu.usb.hid.fake_serial=teensy_gateway
-#teensy40.menu.usb.serialhid=Serial + Keyboard + Mouse + Joystick
-#teensy40.menu.usb.serialhid.build.usbtype=USB_SERIAL_HID
-#teensy40.menu.usb.midi=MIDI
-#teensy40.menu.usb.midi.build.usbtype=USB_MIDI
-#teensy40.menu.usb.midi.fake_serial=teensy_gateway
-#teensy40.menu.usb.midi4=MIDIx4
-#teensy40.menu.usb.midi4.build.usbtype=USB_MIDI4
-#teensy40.menu.usb.midi4.fake_serial=teensy_gateway
-#teensy40.menu.usb.midi16=MIDIx16
-#teensy40.menu.usb.midi16.build.usbtype=USB_MIDI16
-#teensy40.menu.usb.midi16.fake_serial=teensy_gateway
-#teensy40.menu.usb.serialmidi=Serial + MIDI
-#teensy40.menu.usb.serialmidi.build.usbtype=USB_MIDI_SERIAL
-#teensy40.menu.usb.serialmidi4=Serial + MIDIx4
-#teensy40.menu.usb.serialmidi4.build.usbtype=USB_MIDI4_SERIAL
-#teensy40.menu.usb.serialmidi16=Serial + MIDIx16
-#teensy40.menu.usb.serialmidi16.build.usbtype=USB_MIDI16_SERIAL
-#teensy40.menu.usb.audio=Audio
-#teensy40.menu.usb.audio.build.usbtype=USB_AUDIO
-#teensy40.menu.usb.audio.fake_serial=teensy_gateway
-#teensy40.menu.usb.serialmidiaudio=Serial + MIDI + Audio
-#teensy40.menu.usb.serialmidiaudio.build.usbtype=USB_MIDI_AUDIO_SERIAL
-#teensy40.menu.usb.serialmidi16audio=Serial + MIDIx16 + Audio
-#teensy40.menu.usb.serialmidi16audio.build.usbtype=USB_MIDI16_AUDIO_SERIAL
-#teensy40.menu.usb.mtp=MTP Disk (Experimental)
-#teensy40.menu.usb.mtp.build.usbtype=USB_MTPDISK
-#teensy40.menu.usb.mtp.fake_serial=teensy_gateway
-#teensy40.menu.usb.rawhid=Raw HID
-#teensy40.menu.usb.rawhid.build.usbtype=USB_RAWHID
-#teensy40.menu.usb.rawhid.fake_serial=teensy_gateway
-#teensy40.menu.usb.flightsim=Flight Sim Controls
-#teensy40.menu.usb.flightsim.build.usbtype=USB_FLIGHTSIM
-#teensy40.menu.usb.flightsim.fake_serial=teensy_gateway
-#teensy40.menu.usb.flightsimjoystick=Flight Sim Controls + Joystick
-#teensy40.menu.usb.flightsimjoystick.build.usbtype=USB_FLIGHTSIM_JOYSTICK
-#teensy40.menu.usb.flightsimjoystick.fake_serial=teensy_gateway
-#teensy40.menu.usb.disable=No USB
-#teensy40.menu.usb.disable.build.usbtype=USB_DISABLED
+menu.cpu=Processor
 
-teensy40.menu.opt.o2std=Faster
-teensy40.menu.opt.o2std.build.flags.optimize=-O2
-teensy40.menu.opt.o2std.build.flags.ldspecs=
-#teensy40.menu.opt.o2lto=Faster with LTO
-#teensy40.menu.opt.o2lto.build.flags.optimize=-O2 -flto -fno-fat-lto-objects
-#teensy40.menu.opt.o2lto.build.flags.ldspecs=-fuse-linker-plugin
-teensy40.menu.opt.o1std=Fast
-teensy40.menu.opt.o1std.build.flags.optimize=-O1
-teensy40.menu.opt.o1std.build.flags.ldspecs=
-#teensy40.menu.opt.o1lto=Fast with LTO
-#teensy40.menu.opt.o1lto.build.flags.optimize=-O1 -flto -fno-fat-lto-objects
-#teensy40.menu.opt.o1lto.build.flags.ldspecs=-fuse-linker-plugin
-teensy40.menu.opt.o3std=Fastest
-teensy40.menu.opt.o3std.build.flags.optimize=-O3
-teensy40.menu.opt.o3std.build.flags.ldspecs=
-#teensy40.menu.opt.o3purestd=Fastest + pure-code
-#teensy40.menu.opt.o3purestd.build.flags.optimize=-O3 -mpure-code -D__PURE_CODE__
-#teensy40.menu.opt.o3purestd.build.flags.ldspecs=
-#teensy40.menu.opt.o3lto=Fastest with LTO
-#teensy40.menu.opt.o3lto.build.flags.optimize=-O3 -flto -fno-fat-lto-objects
-#teensy40.menu.opt.o3lto.build.flags.ldspecs=-fuse-linker-plugin
-#teensy40.menu.opt.o3purelto=Fastest + pure-code with LTO
-#teensy40.menu.opt.o3purelto.build.flags.optimize=-O3 -mpure-code -D__PURE_CODE__ -flto -fno-fat-lto-objects
-#teensy40.menu.opt.o3purelto.build.flags.ldspecs=-fuse-linker-plugin
-teensy40.menu.opt.ogstd=Debug
-teensy40.menu.opt.ogstd.build.flags.optimize=-Og
-teensy40.menu.opt.ogstd.build.flags.ldspecs=
-#teensy40.menu.opt.oglto=Debug with LTO
-#teensy40.menu.opt.oglto.build.flags.optimize=-Og -flto -fno-fat-lto-objects
-#teensy40.menu.opt.oglto.build.flags.ldspecs=-fuse-linker-plugin
-teensy40.menu.opt.osstd=Smallest Code
-teensy40.menu.opt.osstd.build.flags.optimize=-Os --specs=nano.specs
-teensy40.menu.opt.osstd.build.flags.ldspecs=
-#teensy40.menu.opt.oslto=Smallest Code with LTO
-#teensy40.menu.opt.oslto.build.flags.optimize=-Os -flto -fno-fat-lto-objects --specs=nano.specs
-#teensy40.menu.opt.oslto.build.flags.ldspecs=-fuse-linker-plugin
+##############################################################
 
-teensy40.menu.keys.en-us=US English
-teensy40.menu.keys.en-us.build.keylayout=US_ENGLISH
-teensy40.menu.keys.fr-ca=Canadian French
-teensy40.menu.keys.fr-ca.build.keylayout=CANADIAN_FRENCH
-teensy40.menu.keys.xx-ca=Canadian Multilingual
-teensy40.menu.keys.xx-ca.build.keylayout=CANADIAN_MULTILINGUAL
-teensy40.menu.keys.cz-cz=Czech
-teensy40.menu.keys.cz-cz.build.keylayout=CZECH
-teensy40.menu.keys.da-da=Danish
-teensy40.menu.keys.da-da.build.keylayout=DANISH
-teensy40.menu.keys.fi-fi=Finnish
-teensy40.menu.keys.fi-fi.build.keylayout=FINNISH
-teensy40.menu.keys.fr-fr=French
-teensy40.menu.keys.fr-fr.build.keylayout=FRENCH
-teensy40.menu.keys.fr-be=French Belgian
-teensy40.menu.keys.fr-be.build.keylayout=FRENCH_BELGIAN
-teensy40.menu.keys.fr-ch=French Swiss
-teensy40.menu.keys.fr-ch.build.keylayout=FRENCH_SWISS
-teensy40.menu.keys.de-de=German
-teensy40.menu.keys.de-de.build.keylayout=GERMAN
-teensy40.menu.keys.de-dm=German (Mac)
-teensy40.menu.keys.de-dm.build.keylayout=GERMAN_MAC
-teensy40.menu.keys.de-ch=German Swiss
-teensy40.menu.keys.de-ch.build.keylayout=GERMAN_SWISS
-teensy40.menu.keys.is-is=Icelandic
-teensy40.menu.keys.is-is.build.keylayout=ICELANDIC
-teensy40.menu.keys.en-ie=Irish
-teensy40.menu.keys.en-ie.build.keylayout=IRISH
-teensy40.menu.keys.it-it=Italian
-teensy40.menu.keys.it-it.build.keylayout=ITALIAN
-teensy40.menu.keys.no-no=Norwegian
-teensy40.menu.keys.no-no.build.keylayout=NORWEGIAN
-teensy40.menu.keys.pt-pt=Portuguese
-teensy40.menu.keys.pt-pt.build.keylayout=PORTUGUESE
-teensy40.menu.keys.pt-br=Portuguese Brazilian
-teensy40.menu.keys.pt-br.build.keylayout=PORTUGUESE_BRAZILIAN
-teensy40.menu.keys.rs-rs=Serbian (Latin Only)
-teensy40.menu.keys.rs-rs.build.keylayout=SERBIAN_LATIN_ONLY
-teensy40.menu.keys.es-es=Spanish
-teensy40.menu.keys.es-es.build.keylayout=SPANISH
-teensy40.menu.keys.es-mx=Spanish Latin America
-teensy40.menu.keys.es-mx.build.keylayout=SPANISH_LATIN_AMERICA
-teensy40.menu.keys.sv-se=Swedish
-teensy40.menu.keys.sv-se.build.keylayout=SWEDISH
-teensy40.menu.keys.tr-tr=Turkish (partial)
-teensy40.menu.keys.tr-tr.build.keylayout=TURKISH
-teensy40.menu.keys.en-gb=United Kingdom
-teensy40.menu.keys.en-gb.build.keylayout=UNITED_KINGDOM
-teensy40.menu.keys.usint=US International
-teensy40.menu.keys.usint.build.keylayout=US_INTERNATIONAL
+yun.name=Arduino Yún
+yun.upload.via_ssh=true
 
+yun.vid.0=0x2341
+yun.pid.0=0x0041
+yun.vid.1=0x2341
+yun.pid.1=0x8041
+yun.vid.2=0x2A03
+yun.pid.2=0x0041
+yun.vid.3=0x2A03
+yun.pid.3=0x8041
 
-#teensy4b1.name=Teensy 4-Beta1
-#teensy4b1.upload.maximum_size=1572864
-#teensy4b1.upload.maximum_data_size=262144
-#teensy4b1.upload.tool=teensyloader
-#teensy4b1.upload.protocol=halfkay
-#teensy4b1.build.board=TEENSY40
-#teensy4b1.build.core=teensy4
-#teensy4b1.build.mcu=imxrt1052
-#teensy4b1.build.warn_data_percentage=99
-#teensy4b1.build.toolchain=arm/bin/
-#teensy4b1.build.command.gcc=arm-none-eabi-gcc
-#teensy4b1.build.command.g++=arm-none-eabi-g++
-#teensy4b1.build.command.ar=arm-none-eabi-gcc-ar
-#teensy4b1.build.command.objcopy=arm-none-eabi-objcopy
-#teensy4b1.build.command.objdump=arm-none-eabi-objdump
-#teensy4b1.build.command.linker=arm-none-eabi-gcc
-#teensy4b1.build.command.size=arm-none-eabi-size
-#teensy4b1.build.flags.common=-g -Wall -ffunction-sections -fdata-sections -nostdlib
-#teensy4b1.build.flags.dep=-MMD
-#teensy4b1.build.flags.optimize=-Os
-#teensy4b1.build.flags.cpu=-mthumb -mcpu=cortex-m7 -mfloat-abi=hard -mfpu=fpv5-d16
-#teensy4b1.build.flags.defs=-D__IMXRT1052__ -DTEENSYDUINO=147
-#teensy4b1.build.flags.cpp=-std=gnu++14 -fno-exceptions -fpermissive -fno-rtti -fno-threadsafe-statics -felide-constructors -Wno-error=narrowing
-#teensy4b1.build.flags.c=
-#teensy4b1.build.flags.S=-x assembler-with-cpp
-#teensy4b1.build.flags.ld=-Wl,--gc-sections,--relax "-T{build.core.path}/imxrt1052.ld"
-#teensy4b1.build.flags.libs=-larm_cortexM7lfsp_math -lm -lstdc++
-#teensy4b1.build.fcpu=396000000
-#teensy4b1.serial.restart_cmd=false
-#teensy4b1.menu.usb.serial=Serial
-#teensy4b1.menu.usb.serial.build.usbtype=USB_SERIAL
-#teensy4b1.menu.usb.keyboard=Keyboard
-#teensy4b1.menu.usb.keyboard.build.usbtype=USB_KEYBOARDONLY
-#teensy4b1.menu.usb.keyboard.fake_serial=teensy_gateway
-#teensy4b1.menu.usb.touch=Keyboard + Touch Screen
-#teensy4b1.menu.usb.touch.build.usbtype=USB_TOUCHSCREEN
-#teensy4b1.menu.usb.touch.fake_serial=teensy_gateway
-#teensy4b1.menu.usb.hidtouch=Keyboard + Mouse + Touch Screen
-#teensy4b1.menu.usb.hidtouch.build.usbtype=USB_HID_TOUCHSCREEN
-#teensy4b1.menu.usb.hidtouch.fake_serial=teensy_gateway
-#teensy4b1.menu.usb.hid=Keyboard + Mouse + Joystick
-#teensy4b1.menu.usb.hid.build.usbtype=USB_HID
-#teensy4b1.menu.usb.hid.fake_serial=teensy_gateway
-#teensy4b1.menu.usb.serialhid=Serial + Keyboard + Mouse + Joystick
-#teensy4b1.menu.usb.serialhid.build.usbtype=USB_SERIAL_HID
-#teensy4b1.menu.usb.midi=MIDI
-#teensy4b1.menu.usb.midi.build.usbtype=USB_MIDI
-#teensy4b1.menu.usb.midi.fake_serial=teensy_gateway
-#teensy4b1.menu.usb.midi4=MIDIx4
-#teensy4b1.menu.usb.midi4.build.usbtype=USB_MIDI4
-#teensy4b1.menu.usb.midi4.fake_serial=teensy_gateway
-#teensy4b1.menu.usb.midi16=MIDIx16
-#teensy4b1.menu.usb.midi16.build.usbtype=USB_MIDI16
-#teensy4b1.menu.usb.midi16.fake_serial=teensy_gateway
-#teensy4b1.menu.usb.serialmidi=Serial + MIDI
-#teensy4b1.menu.usb.serialmidi.build.usbtype=USB_MIDI_SERIAL
-#teensy4b1.menu.usb.serialmidi4=Serial + MIDIx4
-#teensy4b1.menu.usb.serialmidi4.build.usbtype=USB_MIDI4_SERIAL
-#teensy4b1.menu.usb.serialmidi16=Serial + MIDIx16
-#teensy4b1.menu.usb.serialmidi16.build.usbtype=USB_MIDI16_SERIAL
-#teensy4b1.menu.usb.audio=Audio
-#teensy4b1.menu.usb.audio.build.usbtype=USB_AUDIO
-#teensy4b1.menu.usb.audio.fake_serial=teensy_gateway
-#teensy4b1.menu.usb.serialmidiaudio=Serial + MIDI + Audio
-#teensy4b1.menu.usb.serialmidiaudio.build.usbtype=USB_MIDI_AUDIO_SERIAL
-#teensy4b1.menu.usb.serialmidi16audio=Serial + MIDIx16 + Audio
-#teensy4b1.menu.usb.serialmidi16audio.build.usbtype=USB_MIDI16_AUDIO_SERIAL
-#teensy4b1.menu.usb.mtp=MTP Disk (Experimental)
-#teensy4b1.menu.usb.mtp.build.usbtype=USB_MTPDISK
-#teensy4b1.menu.usb.mtp.fake_serial=teensy_gateway
-#teensy4b1.menu.usb.rawhid=Raw HID
-#teensy4b1.menu.usb.rawhid.build.usbtype=USB_RAWHID
-#teensy4b1.menu.usb.rawhid.fake_serial=teensy_gateway
-#teensy4b1.menu.usb.flightsim=Flight Sim Controls
-#teensy4b1.menu.usb.flightsim.build.usbtype=USB_FLIGHTSIM
-#teensy4b1.menu.usb.flightsim.fake_serial=teensy_gateway
-#teensy4b1.menu.usb.flightsimjoystick=Flight Sim Controls + Joystick
-#teensy4b1.menu.usb.flightsimjoystick.build.usbtype=USB_FLIGHTSIM_JOYSTICK
-#teensy4b1.menu.usb.flightsimjoystick.fake_serial=teensy_gateway
-#teensy4b1.menu.usb.disable=No USB
-#teensy4b1.menu.usb.disable.build.usbtype=USB_DISABLED
-#
-#teensy4b1.menu.opt.o2std=Faster
-#teensy4b1.menu.opt.o2std.build.flags.optimize=-O2
-#teensy4b1.menu.opt.o2std.build.flags.ldspecs=
-#teensy4b1.menu.opt.o2lto=Faster with LTO
-#teensy4b1.menu.opt.o2lto.build.flags.optimize=-O2 -flto -fno-fat-lto-objects
-#teensy4b1.menu.opt.o2lto.build.flags.ldspecs=-fuse-linker-plugin
-#teensy4b1.menu.opt.o1std=Fast
-#teensy4b1.menu.opt.o1std.build.flags.optimize=-O1
-#teensy4b1.menu.opt.o1std.build.flags.ldspecs=
-#teensy4b1.menu.opt.o1lto=Fast with LTO
-#teensy4b1.menu.opt.o1lto.build.flags.optimize=-O1 -flto -fno-fat-lto-objects
-#teensy4b1.menu.opt.o1lto.build.flags.ldspecs=-fuse-linker-plugin
-#teensy4b1.menu.opt.o3std=Fastest
-#teensy4b1.menu.opt.o3std.build.flags.optimize=-O3
-#teensy4b1.menu.opt.o3std.build.flags.ldspecs=
-#teensy4b1.menu.opt.o3purestd=Fastest + pure-code
-#teensy4b1.menu.opt.o3purestd.build.flags.optimize=-O3 -mpure-code -D__PURE_CODE__
-#teensy4b1.menu.opt.o3purestd.build.flags.ldspecs=
-#teensy4b1.menu.opt.o3lto=Fastest with LTO
-#teensy4b1.menu.opt.o3lto.build.flags.optimize=-O3 -flto -fno-fat-lto-objects
-#teensy4b1.menu.opt.o3lto.build.flags.ldspecs=-fuse-linker-plugin
-#teensy4b1.menu.opt.o3purelto=Fastest + pure-code with LTO
-#teensy4b1.menu.opt.o3purelto.build.flags.optimize=-O3 -mpure-code -D__PURE_CODE__ -flto -fno-fat-lto-objects
-#teensy4b1.menu.opt.o3purelto.build.flags.ldspecs=-fuse-linker-plugin
-#teensy4b1.menu.opt.ogstd=Debug
-#teensy4b1.menu.opt.ogstd.build.flags.optimize=-Og
-#teensy4b1.menu.opt.ogstd.build.flags.ldspecs=
-#teensy4b1.menu.opt.oglto=Debug with LTO
-#teensy4b1.menu.opt.oglto.build.flags.optimize=-Og -flto -fno-fat-lto-objects
-#teensy4b1.menu.opt.oglto.build.flags.ldspecs=-fuse-linker-plugin
-#teensy4b1.menu.opt.osstd=Smallest Code
-#teensy4b1.menu.opt.osstd.build.flags.optimize=-Os --specs=nano.specs
-#teensy4b1.menu.opt.osstd.build.flags.ldspecs=
-#teensy4b1.menu.opt.oslto=Smallest Code with LTO
-#teensy4b1.menu.opt.oslto.build.flags.optimize=-Os -flto -fno-fat-lto-objects --specs=nano.specs
-#teensy4b1.menu.opt.oslto.build.flags.ldspecs=-fuse-linker-plugin
-#
-#teensy4b1.menu.keys.en-us=US English
-#teensy4b1.menu.keys.en-us.build.keylayout=US_ENGLISH
-#teensy4b1.menu.keys.fr-ca=Canadian French
-#teensy4b1.menu.keys.fr-ca.build.keylayout=CANADIAN_FRENCH
-#teensy4b1.menu.keys.xx-ca=Canadian Multilingual
-#teensy4b1.menu.keys.xx-ca.build.keylayout=CANADIAN_MULTILINGUAL
-#teensy4b1.menu.keys.cz-cz=Czech
-#teensy4b1.menu.keys.cz-cz.build.keylayout=CZECH
-#teensy4b1.menu.keys.da-da=Danish
-#teensy4b1.menu.keys.da-da.build.keylayout=DANISH
-#teensy4b1.menu.keys.fi-fi=Finnish
-#teensy4b1.menu.keys.fi-fi.build.keylayout=FINNISH
-#teensy4b1.menu.keys.fr-fr=French
-#teensy4b1.menu.keys.fr-fr.build.keylayout=FRENCH
-#teensy4b1.menu.keys.fr-be=French Belgian
-#teensy4b1.menu.keys.fr-be.build.keylayout=FRENCH_BELGIAN
-#teensy4b1.menu.keys.fr-ch=French Swiss
-#teensy4b1.menu.keys.fr-ch.build.keylayout=FRENCH_SWISS
-#teensy4b1.menu.keys.de-de=German
-#teensy4b1.menu.keys.de-de.build.keylayout=GERMAN
-#teensy4b1.menu.keys.de-dm=German (Mac)
-#teensy4b1.menu.keys.de-dm.build.keylayout=GERMAN_MAC
-#teensy4b1.menu.keys.de-ch=German Swiss
-#teensy4b1.menu.keys.de-ch.build.keylayout=GERMAN_SWISS
-#teensy4b1.menu.keys.is-is=Icelandic
-#teensy4b1.menu.keys.is-is.build.keylayout=ICELANDIC
-#teensy4b1.menu.keys.en-ie=Irish
-#teensy4b1.menu.keys.en-ie.build.keylayout=IRISH
-#teensy4b1.menu.keys.it-it=Italian
-#teensy4b1.menu.keys.it-it.build.keylayout=ITALIAN
-#teensy4b1.menu.keys.no-no=Norwegian
-#teensy4b1.menu.keys.no-no.build.keylayout=NORWEGIAN
-#teensy4b1.menu.keys.pt-pt=Portuguese
-#teensy4b1.menu.keys.pt-pt.build.keylayout=PORTUGUESE
-#teensy4b1.menu.keys.pt-br=Portuguese Brazilian
-#teensy4b1.menu.keys.pt-br.build.keylayout=PORTUGUESE_BRAZILIAN
-#teensy4b1.menu.keys.rs-rs=Serbian (Latin Only)
-#teensy4b1.menu.keys.rs-rs.build.keylayout=SERBIAN_LATIN_ONLY
-#teensy4b1.menu.keys.es-es=Spanish
-#teensy4b1.menu.keys.es-es.build.keylayout=SPANISH
-#teensy4b1.menu.keys.es-mx=Spanish Latin America
-#teensy4b1.menu.keys.es-mx.build.keylayout=SPANISH_LATIN_AMERICA
-#teensy4b1.menu.keys.sv-se=Swedish
-#teensy4b1.menu.keys.sv-se.build.keylayout=SWEDISH
-#teensy4b1.menu.keys.tr-tr=Turkish (partial)
-#teensy4b1.menu.keys.tr-tr.build.keylayout=TURKISH
-#teensy4b1.menu.keys.en-gb=United Kingdom
-#teensy4b1.menu.keys.en-gb.build.keylayout=UNITED_KINGDOM
-#teensy4b1.menu.keys.usint=US International
-#teensy4b1.menu.keys.usint.build.keylayout=US_INTERNATIONAL
+yun.upload.tool=avrdude
+yun.upload.protocol=avr109
+yun.upload.maximum_size=28672
+yun.upload.maximum_data_size=2560
+yun.upload.speed=57600
+yun.upload.disable_flushing=true
+yun.upload.use_1200bps_touch=true
+yun.upload.wait_for_upload_port=true
 
+yun.bootloader.tool=avrdude
+yun.bootloader.low_fuses=0xff
+yun.bootloader.high_fuses=0xd8
+yun.bootloader.extended_fuses=0xfb
+yun.bootloader.file=caterina/Caterina-Yun.hex
+yun.bootloader.noblink=caterina/Caterina-Yun-noblink.hex
+yun.bootloader.unlock_bits=0x3F
+yun.bootloader.lock_bits=0x2F
 
+yun.build.mcu=atmega32u4
+yun.build.f_cpu=16000000L
+yun.build.vid=0x2341
+yun.build.pid=0x8041
+yun.build.usb_product="Arduino Yun"
+yun.build.board=AVR_YUN
+yun.build.core=arduino
+yun.build.variant=yun
+yun.build.extra_flags={build.usb_flags}
 
+##############################################################
 
-teensy36.name=Teensy 3.6
-teensy36.upload.maximum_size=1048576
-teensy36.upload.maximum_data_size=262144
-teensy36.upload.tool=teensyloader
-teensy36.upload.protocol=halfkay
-teensy36.build.board=TEENSY36
-teensy36.build.core=teensy3
-teensy36.build.mcu=mk66fx1m0
-teensy36.build.warn_data_percentage=99
-teensy36.build.toolchain=arm/bin/
-teensy36.build.command.gcc=arm-none-eabi-gcc
-teensy36.build.command.g++=arm-none-eabi-g++
-teensy36.build.command.ar=arm-none-eabi-gcc-ar
-teensy36.build.command.objcopy=arm-none-eabi-objcopy
-teensy36.build.command.objdump=arm-none-eabi-objdump
-teensy36.build.command.linker=arm-none-eabi-gcc
-teensy36.build.command.size=arm-none-eabi-size
-teensy36.build.flags.common=-g -Wall -ffunction-sections -fdata-sections -nostdlib
-teensy36.build.flags.dep=-MMD
-teensy36.build.flags.optimize=-Os
-teensy36.build.flags.cpu=-mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant
-teensy36.build.flags.defs=-D__MK66FX1M0__ -DTEENSYDUINO=147
-teensy36.build.flags.cpp=-fno-exceptions -fpermissive -felide-constructors -std=gnu++14 -Wno-error=narrowing -fno-rtti
-teensy36.build.flags.c=
-teensy36.build.flags.S=-x assembler-with-cpp
-teensy36.build.flags.ld=-Wl,--gc-sections,--relax,--defsym=__rtc_localtime={extra.time.local} "-T{build.core.path}/mk66fx1m0.ld" -lstdc++
-teensy36.build.flags.libs=-larm_cortexM4lf_math -lm
-teensy36.serial.restart_cmd=false
-teensy36.menu.usb.serial=Serial
-teensy36.menu.usb.serial.build.usbtype=USB_SERIAL
-teensy36.menu.usb.keyboard=Keyboard
-teensy36.menu.usb.keyboard.build.usbtype=USB_KEYBOARDONLY
-teensy36.menu.usb.keyboard.fake_serial=teensy_gateway
-teensy36.menu.usb.touch=Keyboard + Touch Screen
-teensy36.menu.usb.touch.build.usbtype=USB_TOUCHSCREEN
-teensy36.menu.usb.touch.fake_serial=teensy_gateway
-teensy36.menu.usb.hidtouch=Keyboard + Mouse + Touch Screen
-teensy36.menu.usb.hidtouch.build.usbtype=USB_HID_TOUCHSCREEN
-teensy36.menu.usb.hidtouch.fake_serial=teensy_gateway
-teensy36.menu.usb.hid=Keyboard + Mouse + Joystick
-teensy36.menu.usb.hid.build.usbtype=USB_HID
-teensy36.menu.usb.hid.fake_serial=teensy_gateway
-teensy36.menu.usb.serialhid=Serial + Keyboard + Mouse + Joystick
-teensy36.menu.usb.serialhid.build.usbtype=USB_SERIAL_HID
-teensy36.menu.usb.midi=MIDI
-teensy36.menu.usb.midi.build.usbtype=USB_MIDI
-teensy36.menu.usb.midi.fake_serial=teensy_gateway
-teensy36.menu.usb.midi4=MIDIx4
-teensy36.menu.usb.midi4.build.usbtype=USB_MIDI4
-teensy36.menu.usb.midi4.fake_serial=teensy_gateway
-teensy36.menu.usb.midi16=MIDIx16
-teensy36.menu.usb.midi16.build.usbtype=USB_MIDI16
-teensy36.menu.usb.midi16.fake_serial=teensy_gateway
-teensy36.menu.usb.serialmidi=Serial + MIDI
-teensy36.menu.usb.serialmidi.build.usbtype=USB_MIDI_SERIAL
-teensy36.menu.usb.serialmidi4=Serial + MIDIx4
-teensy36.menu.usb.serialmidi4.build.usbtype=USB_MIDI4_SERIAL
-teensy36.menu.usb.serialmidi16=Serial + MIDIx16
-teensy36.menu.usb.serialmidi16.build.usbtype=USB_MIDI16_SERIAL
-teensy36.menu.usb.audio=Audio
-teensy36.menu.usb.audio.build.usbtype=USB_AUDIO
-teensy36.menu.usb.audio.fake_serial=teensy_gateway
-teensy36.menu.usb.serialmidiaudio=Serial + MIDI + Audio
-teensy36.menu.usb.serialmidiaudio.build.usbtype=USB_MIDI_AUDIO_SERIAL
-teensy36.menu.usb.serialmidi16audio=Serial + MIDIx16 + Audio
-teensy36.menu.usb.serialmidi16audio.build.usbtype=USB_MIDI16_AUDIO_SERIAL
-teensy36.menu.usb.mtp=MTP Disk (Experimental)
-teensy36.menu.usb.mtp.build.usbtype=USB_MTPDISK
-teensy36.menu.usb.mtp.fake_serial=teensy_gateway
-teensy36.menu.usb.rawhid=Raw HID
-teensy36.menu.usb.rawhid.build.usbtype=USB_RAWHID
-teensy36.menu.usb.rawhid.fake_serial=teensy_gateway
-teensy36.menu.usb.flightsim=Flight Sim Controls
-teensy36.menu.usb.flightsim.build.usbtype=USB_FLIGHTSIM
-teensy36.menu.usb.flightsim.fake_serial=teensy_gateway
-teensy36.menu.usb.flightsimjoystick=Flight Sim Controls + Joystick
-teensy36.menu.usb.flightsimjoystick.build.usbtype=USB_FLIGHTSIM_JOYSTICK
-teensy36.menu.usb.flightsimjoystick.fake_serial=teensy_gateway
-teensy36.menu.usb.everything=All of the Above
-teensy36.menu.usb.everything.build.usbtype=USB_EVERYTHING
-teensy36.menu.usb.disable=No USB
-teensy36.menu.usb.disable.build.usbtype=USB_DISABLED
+uno.name=Arduino/Genuino Uno
 
-teensy36.menu.speed.180=180 MHz
-teensy36.menu.speed.168=168 MHz
-teensy36.menu.speed.144=144 MHz
-teensy36.menu.speed.120=120 MHz
-teensy36.menu.speed.96=96 MHz
-teensy36.menu.speed.72=72 MHz
-teensy36.menu.speed.48=48 MHz
-teensy36.menu.speed.24=24 MHz
-teensy36.menu.speed.16=16 MHz (No USB)
-teensy36.menu.speed.8=8 MHz (No USB)
-teensy36.menu.speed.4=4 MHz (No USB)
-teensy36.menu.speed.2=2 MHz (No USB)
-teensy36.menu.speed.192=192 MHz (overclock)
-teensy36.menu.speed.216=216 MHz (overclock)
-teensy36.menu.speed.240=240 MHz (overclock)
-#teensy36.menu.speed.256=256 MHz (overclock)
-#teensy36.menu.speed.256.build.fcpu=256000000
-teensy36.menu.speed.240.build.fcpu=240000000
-teensy36.menu.speed.216.build.fcpu=216000000
-teensy36.menu.speed.192.build.fcpu=192000000
-teensy36.menu.speed.180.build.fcpu=180000000
-teensy36.menu.speed.168.build.fcpu=168000000
-teensy36.menu.speed.144.build.fcpu=144000000
-teensy36.menu.speed.120.build.fcpu=120000000
-teensy36.menu.speed.96.build.fcpu=96000000
-teensy36.menu.speed.72.build.fcpu=72000000
-teensy36.menu.speed.48.build.fcpu=48000000
-teensy36.menu.speed.24.build.fcpu=24000000
-teensy36.menu.speed.16.build.fcpu=16000000
-teensy36.menu.speed.8.build.fcpu=8000000
-teensy36.menu.speed.4.build.fcpu=4000000
-teensy36.menu.speed.2.build.fcpu=2000000
+uno.vid.0=0x2341
+uno.pid.0=0x0043
+uno.vid.1=0x2341
+uno.pid.1=0x0001
+uno.vid.2=0x2A03
+uno.pid.2=0x0043
+uno.vid.3=0x2341
+uno.pid.3=0x0243
 
-teensy36.menu.opt.o2std=Faster
-teensy36.menu.opt.o2std.build.flags.optimize=-O2
-teensy36.menu.opt.o2std.build.flags.ldspecs=
-teensy36.menu.opt.o2lto=Faster with LTO
-teensy36.menu.opt.o2lto.build.flags.optimize=-O2 -flto -fno-fat-lto-objects
-teensy36.menu.opt.o2lto.build.flags.ldspecs=-fuse-linker-plugin
-teensy36.menu.opt.o1std=Fast
-teensy36.menu.opt.o1std.build.flags.optimize=-O1
-teensy36.menu.opt.o1std.build.flags.ldspecs=
-teensy36.menu.opt.o1lto=Fast with LTO
-teensy36.menu.opt.o1lto.build.flags.optimize=-O1 -flto -fno-fat-lto-objects
-teensy36.menu.opt.o1lto.build.flags.ldspecs=-fuse-linker-plugin
-teensy36.menu.opt.o3std=Fastest
-teensy36.menu.opt.o3std.build.flags.optimize=-O3
-teensy36.menu.opt.o3std.build.flags.ldspecs=
-teensy36.menu.opt.o3purestd=Fastest + pure-code
-teensy36.menu.opt.o3purestd.build.flags.optimize=-O3 -mpure-code -D__PURE_CODE__
-teensy36.menu.opt.o3purestd.build.flags.ldspecs=
-teensy36.menu.opt.o3lto=Fastest with LTO
-teensy36.menu.opt.o3lto.build.flags.optimize=-O3 -flto -fno-fat-lto-objects
-teensy36.menu.opt.o3lto.build.flags.ldspecs=-fuse-linker-plugin
-teensy36.menu.opt.o3purelto=Fastest + pure-code with LTO
-teensy36.menu.opt.o3purelto.build.flags.optimize=-O3 -mpure-code -D__PURE_CODE__ -flto -fno-fat-lto-objects
-teensy36.menu.opt.o3purelto.build.flags.ldspecs=-fuse-linker-plugin
-teensy36.menu.opt.ogstd=Debug
-teensy36.menu.opt.ogstd.build.flags.optimize=-Og
-teensy36.menu.opt.ogstd.build.flags.ldspecs=
-teensy36.menu.opt.oglto=Debug with LTO
-teensy36.menu.opt.oglto.build.flags.optimize=-Og -flto -fno-fat-lto-objects
-teensy36.menu.opt.oglto.build.flags.ldspecs=-fuse-linker-plugin
-teensy36.menu.opt.osstd=Smallest Code
-teensy36.menu.opt.osstd.build.flags.optimize=-Os --specs=nano.specs
-teensy36.menu.opt.osstd.build.flags.ldspecs=
-teensy36.menu.opt.oslto=Smallest Code with LTO
-teensy36.menu.opt.oslto.build.flags.optimize=-Os -flto -fno-fat-lto-objects --specs=nano.specs
-teensy36.menu.opt.oslto.build.flags.ldspecs=-fuse-linker-plugin
+uno.upload.tool=avrdude
+uno.upload.protocol=arduino
+uno.upload.maximum_size=32256
+uno.upload.maximum_data_size=2048
+uno.upload.speed=115200
 
-teensy36.menu.keys.en-us=US English
-teensy36.menu.keys.en-us.build.keylayout=US_ENGLISH
-teensy36.menu.keys.fr-ca=Canadian French
-teensy36.menu.keys.fr-ca.build.keylayout=CANADIAN_FRENCH
-teensy36.menu.keys.xx-ca=Canadian Multilingual
-teensy36.menu.keys.xx-ca.build.keylayout=CANADIAN_MULTILINGUAL
-teensy36.menu.keys.cz-cz=Czech
-teensy36.menu.keys.cz-cz.build.keylayout=CZECH
-teensy36.menu.keys.da-da=Danish
-teensy36.menu.keys.da-da.build.keylayout=DANISH
-teensy36.menu.keys.fi-fi=Finnish
-teensy36.menu.keys.fi-fi.build.keylayout=FINNISH
-teensy36.menu.keys.fr-fr=French
-teensy36.menu.keys.fr-fr.build.keylayout=FRENCH
-teensy36.menu.keys.fr-be=French Belgian
-teensy36.menu.keys.fr-be.build.keylayout=FRENCH_BELGIAN
-teensy36.menu.keys.fr-ch=French Swiss
-teensy36.menu.keys.fr-ch.build.keylayout=FRENCH_SWISS
-teensy36.menu.keys.de-de=German
-teensy36.menu.keys.de-de.build.keylayout=GERMAN
-teensy36.menu.keys.de-dm=German (Mac)
-teensy36.menu.keys.de-dm.build.keylayout=GERMAN_MAC
-teensy36.menu.keys.de-ch=German Swiss
-teensy36.menu.keys.de-ch.build.keylayout=GERMAN_SWISS
-teensy36.menu.keys.is-is=Icelandic
-teensy36.menu.keys.is-is.build.keylayout=ICELANDIC
-teensy36.menu.keys.en-ie=Irish
-teensy36.menu.keys.en-ie.build.keylayout=IRISH
-teensy36.menu.keys.it-it=Italian
-teensy36.menu.keys.it-it.build.keylayout=ITALIAN
-teensy36.menu.keys.no-no=Norwegian
-teensy36.menu.keys.no-no.build.keylayout=NORWEGIAN
-teensy36.menu.keys.pt-pt=Portuguese
-teensy36.menu.keys.pt-pt.build.keylayout=PORTUGUESE
-teensy36.menu.keys.pt-br=Portuguese Brazilian
-teensy36.menu.keys.pt-br.build.keylayout=PORTUGUESE_BRAZILIAN
-teensy36.menu.keys.rs-rs=Serbian (Latin Only)
-teensy36.menu.keys.rs-rs.build.keylayout=SERBIAN_LATIN_ONLY
-teensy36.menu.keys.es-es=Spanish
-teensy36.menu.keys.es-es.build.keylayout=SPANISH
-teensy36.menu.keys.es-mx=Spanish Latin America
-teensy36.menu.keys.es-mx.build.keylayout=SPANISH_LATIN_AMERICA
-teensy36.menu.keys.sv-se=Swedish
-teensy36.menu.keys.sv-se.build.keylayout=SWEDISH
-teensy36.menu.keys.tr-tr=Turkish (partial)
-teensy36.menu.keys.tr-tr.build.keylayout=TURKISH
-teensy36.menu.keys.en-gb=United Kingdom
-teensy36.menu.keys.en-gb.build.keylayout=UNITED_KINGDOM
-teensy36.menu.keys.usint=US International
-teensy36.menu.keys.usint.build.keylayout=US_INTERNATIONAL
+uno.bootloader.tool=avrdude
+uno.bootloader.low_fuses=0xFF
+uno.bootloader.high_fuses=0xDE
+uno.bootloader.extended_fuses=0xFD
+uno.bootloader.unlock_bits=0x3F
+uno.bootloader.lock_bits=0x0F
+uno.bootloader.file=optiboot/optiboot_atmega328.hex
 
+uno.build.mcu=atmega328p
+uno.build.f_cpu=16000000L
+uno.build.board=AVR_UNO
+uno.build.core=arduino
+uno.build.variant=standard
 
-teensy35.name=Teensy 3.5
-teensy35.upload.maximum_size=524288
-teensy35.upload.maximum_data_size=262136
-teensy35.upload.tool=teensyloader
-teensy35.upload.protocol=halfkay
-teensy35.build.board=TEENSY35
-teensy35.build.core=teensy3
-teensy35.build.mcu=mk64fx512
-teensy35.build.warn_data_percentage=98
-teensy35.build.toolchain=arm/bin/
-teensy35.build.command.gcc=arm-none-eabi-gcc
-teensy35.build.command.g++=arm-none-eabi-g++
-teensy35.build.command.ar=arm-none-eabi-gcc-ar
-teensy35.build.command.objcopy=arm-none-eabi-objcopy
-teensy35.build.command.objdump=arm-none-eabi-objdump
-teensy35.build.command.linker=arm-none-eabi-gcc
-teensy35.build.command.size=arm-none-eabi-size
-teensy35.build.flags.common=-g -Wall -ffunction-sections -fdata-sections -nostdlib
-teensy35.build.flags.dep=-MMD
-teensy35.build.flags.optimize=-Os
-teensy35.build.flags.cpu=-mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant
-teensy35.build.flags.defs=-D__MK64FX512__ -DTEENSYDUINO=147
-teensy35.build.flags.cpp=-fno-exceptions -fpermissive -felide-constructors -std=gnu++14 -Wno-error=narrowing -fno-rtti
-teensy35.build.flags.c=
-teensy35.build.flags.S=-x assembler-with-cpp
-teensy35.build.flags.ld=-Wl,--gc-sections,--relax,--defsym=__rtc_localtime={extra.time.local} "-T{build.core.path}/mk64fx512.ld" -lstdc++
-teensy35.build.flags.libs=-larm_cortexM4lf_math -lm
-teensy35.serial.restart_cmd=false
-teensy35.menu.usb.serial=Serial
-teensy35.menu.usb.serial.build.usbtype=USB_SERIAL
-teensy35.menu.usb.keyboard=Keyboard
-teensy35.menu.usb.keyboard.build.usbtype=USB_KEYBOARDONLY
-teensy35.menu.usb.keyboard.fake_serial=teensy_gateway
-teensy35.menu.usb.touch=Keyboard + Touch Screen
-teensy35.menu.usb.touch.build.usbtype=USB_TOUCHSCREEN
-teensy35.menu.usb.touch.fake_serial=teensy_gateway
-teensy35.menu.usb.hidtouch=Keyboard + Mouse + Touch Screen
-teensy35.menu.usb.hidtouch.build.usbtype=USB_HID_TOUCHSCREEN
-teensy35.menu.usb.hidtouch.fake_serial=teensy_gateway
-teensy35.menu.usb.hid=Keyboard + Mouse + Joystick
-teensy35.menu.usb.hid.build.usbtype=USB_HID
-teensy35.menu.usb.hid.fake_serial=teensy_gateway
-teensy35.menu.usb.serialhid=Serial + Keyboard + Mouse + Joystick
-teensy35.menu.usb.serialhid.build.usbtype=USB_SERIAL_HID
-teensy35.menu.usb.midi=MIDI
-teensy35.menu.usb.midi.build.usbtype=USB_MIDI
-teensy35.menu.usb.midi.fake_serial=teensy_gateway
-teensy35.menu.usb.midi4=MIDIx4
-teensy35.menu.usb.midi4.build.usbtype=USB_MIDI4
-teensy35.menu.usb.midi4.fake_serial=teensy_gateway
-teensy35.menu.usb.midi16=MIDIx16
-teensy35.menu.usb.midi16.build.usbtype=USB_MIDI16
-teensy35.menu.usb.midi16.fake_serial=teensy_gateway
-teensy35.menu.usb.serialmidi=Serial + MIDI
-teensy35.menu.usb.serialmidi.build.usbtype=USB_MIDI_SERIAL
-teensy35.menu.usb.serialmidi4=Serial + MIDIx4
-teensy35.menu.usb.serialmidi4.build.usbtype=USB_MIDI4_SERIAL
-teensy35.menu.usb.serialmidi16=Serial + MIDIx16
-teensy35.menu.usb.serialmidi16.build.usbtype=USB_MIDI16_SERIAL
-teensy35.menu.usb.audio=Audio
-teensy35.menu.usb.audio.build.usbtype=USB_AUDIO
-teensy35.menu.usb.audio.fake_serial=teensy_gateway
-teensy35.menu.usb.serialmidiaudio=Serial + MIDI + Audio
-teensy35.menu.usb.serialmidiaudio.build.usbtype=USB_MIDI_AUDIO_SERIAL
-teensy35.menu.usb.serialmidi16audio=Serial + MIDIx16 + Audio
-teensy35.menu.usb.serialmidi16audio.build.usbtype=USB_MIDI16_AUDIO_SERIAL
-teensy35.menu.usb.mtp=MTP Disk (Experimental)
-teensy35.menu.usb.mtp.build.usbtype=USB_MTPDISK
-teensy35.menu.usb.mtp.fake_serial=teensy_gateway
-teensy35.menu.usb.rawhid=Raw HID
-teensy35.menu.usb.rawhid.build.usbtype=USB_RAWHID
-teensy35.menu.usb.rawhid.fake_serial=teensy_gateway
-teensy35.menu.usb.flightsim=Flight Sim Controls
-teensy35.menu.usb.flightsim.build.usbtype=USB_FLIGHTSIM
-teensy35.menu.usb.flightsim.fake_serial=teensy_gateway
-teensy35.menu.usb.flightsimjoystick=Flight Sim Controls + Joystick
-teensy35.menu.usb.flightsimjoystick.build.usbtype=USB_FLIGHTSIM_JOYSTICK
-teensy35.menu.usb.flightsimjoystick.fake_serial=teensy_gateway
-teensy35.menu.usb.everything=All of the Above
-teensy35.menu.usb.everything.build.usbtype=USB_EVERYTHING
-teensy35.menu.usb.disable=No USB
-teensy35.menu.usb.disable.build.usbtype=USB_DISABLED
+##############################################################
 
-teensy35.menu.speed.120=120 MHz
-teensy35.menu.speed.96=96 MHz
-teensy35.menu.speed.72=72 MHz
-teensy35.menu.speed.48=48 MHz
-teensy35.menu.speed.24=24 MHz
-teensy35.menu.speed.16=16 MHz (No USB)
-teensy35.menu.speed.8=8 MHz (No USB)
-teensy35.menu.speed.4=4 MHz (No USB)
-teensy35.menu.speed.2=2 MHz (No USB)
-teensy35.menu.speed.144=144 MHz (overclock)
-teensy35.menu.speed.168=168 MHz (overclock)
-teensy35.menu.speed.168.build.fcpu=168000000
-teensy35.menu.speed.144.build.fcpu=144000000
-teensy35.menu.speed.120.build.fcpu=120000000
-teensy35.menu.speed.96.build.fcpu=96000000
-teensy35.menu.speed.72.build.fcpu=72000000
-teensy35.menu.speed.48.build.fcpu=48000000
-teensy35.menu.speed.24.build.fcpu=24000000
-teensy35.menu.speed.16.build.fcpu=16000000
-teensy35.menu.speed.8.build.fcpu=8000000
-teensy35.menu.speed.4.build.fcpu=4000000
-teensy35.menu.speed.2.build.fcpu=2000000
+diecimila.name=Arduino Duemilanove or Diecimila
 
-teensy35.menu.opt.o2std=Faster
-teensy35.menu.opt.o2std.build.flags.optimize=-O2
-teensy35.menu.opt.o2std.build.flags.ldspecs=
-teensy35.menu.opt.o2lto=Faster with LTO
-teensy35.menu.opt.o2lto.build.flags.optimize=-O2 -flto -fno-fat-lto-objects
-teensy35.menu.opt.o2lto.build.flags.ldspecs=-fuse-linker-plugin
-teensy35.menu.opt.o1std=Fast
-teensy35.menu.opt.o1std.build.flags.optimize=-O1
-teensy35.menu.opt.o1std.build.flags.ldspecs=
-teensy35.menu.opt.o1lto=Fast with LTO
-teensy35.menu.opt.o1lto.build.flags.optimize=-O1 -flto -fno-fat-lto-objects
-teensy35.menu.opt.o1lto.build.flags.ldspecs=-fuse-linker-plugin
-teensy35.menu.opt.o3std=Fastest
-teensy35.menu.opt.o3std.build.flags.optimize=-O3
-teensy35.menu.opt.o3std.build.flags.ldspecs=
-teensy35.menu.opt.o3purestd=Fastest + pure-code
-teensy35.menu.opt.o3purestd.build.flags.optimize=-O3 -mpure-code -D__PURE_CODE__
-teensy35.menu.opt.o3purestd.build.flags.ldspecs=
-teensy35.menu.opt.o3lto=Fastest with LTO
-teensy35.menu.opt.o3lto.build.flags.optimize=-O3 -flto -fno-fat-lto-objects
-teensy35.menu.opt.o3lto.build.flags.ldspecs=-fuse-linker-plugin
-teensy35.menu.opt.o3purelto=Fastest + pure-code with LTO
-teensy35.menu.opt.o3purelto.build.flags.optimize=-O3 -mpure-code -D__PURE_CODE__ -flto -fno-fat-lto-objects
-teensy35.menu.opt.o3purelto.build.flags.ldspecs=-fuse-linker-plugin
-teensy35.menu.opt.ogstd=Debug
-teensy35.menu.opt.ogstd.build.flags.optimize=-Og
-teensy35.menu.opt.ogstd.build.flags.ldspecs=
-teensy35.menu.opt.oglto=Debug with LTO
-teensy35.menu.opt.oglto.build.flags.optimize=-Og -flto -fno-fat-lto-objects
-teensy35.menu.opt.oglto.build.flags.ldspecs=-fuse-linker-plugin
-teensy35.menu.opt.osstd=Smallest Code
-teensy35.menu.opt.osstd.build.flags.optimize=-Os --specs=nano.specs
-teensy35.menu.opt.osstd.build.flags.ldspecs=
-teensy35.menu.opt.oslto=Smallest Code with LTO
-teensy35.menu.opt.oslto.build.flags.optimize=-Os -flto -fno-fat-lto-objects --specs=nano.specs
-teensy35.menu.opt.oslto.build.flags.ldspecs=-fuse-linker-plugin
+diecimila.upload.tool=avrdude
+diecimila.upload.protocol=arduino
 
-teensy35.menu.keys.en-us=US English
-teensy35.menu.keys.en-us.build.keylayout=US_ENGLISH
-teensy35.menu.keys.fr-ca=Canadian French
-teensy35.menu.keys.fr-ca.build.keylayout=CANADIAN_FRENCH
-teensy35.menu.keys.xx-ca=Canadian Multilingual
-teensy35.menu.keys.xx-ca.build.keylayout=CANADIAN_MULTILINGUAL
-teensy35.menu.keys.cz-cz=Czech
-teensy35.menu.keys.cz-cz.build.keylayout=CZECH
-teensy35.menu.keys.da-da=Danish
-teensy35.menu.keys.da-da.build.keylayout=DANISH
-teensy35.menu.keys.fi-fi=Finnish
-teensy35.menu.keys.fi-fi.build.keylayout=FINNISH
-teensy35.menu.keys.fr-fr=French
-teensy35.menu.keys.fr-fr.build.keylayout=FRENCH
-teensy35.menu.keys.fr-be=French Belgian
-teensy35.menu.keys.fr-be.build.keylayout=FRENCH_BELGIAN
-teensy35.menu.keys.fr-ch=French Swiss
-teensy35.menu.keys.fr-ch.build.keylayout=FRENCH_SWISS
-teensy35.menu.keys.de-de=German
-teensy35.menu.keys.de-de.build.keylayout=GERMAN
-teensy35.menu.keys.de-dm=German (Mac)
-teensy35.menu.keys.de-dm.build.keylayout=GERMAN_MAC
-teensy35.menu.keys.de-ch=German Swiss
-teensy35.menu.keys.de-ch.build.keylayout=GERMAN_SWISS
-teensy35.menu.keys.is-is=Icelandic
-teensy35.menu.keys.is-is.build.keylayout=ICELANDIC
-teensy35.menu.keys.en-ie=Irish
-teensy35.menu.keys.en-ie.build.keylayout=IRISH
-teensy35.menu.keys.it-it=Italian
-teensy35.menu.keys.it-it.build.keylayout=ITALIAN
-teensy35.menu.keys.no-no=Norwegian
-teensy35.menu.keys.no-no.build.keylayout=NORWEGIAN
-teensy35.menu.keys.pt-pt=Portuguese
-teensy35.menu.keys.pt-pt.build.keylayout=PORTUGUESE
-teensy35.menu.keys.pt-br=Portuguese Brazilian
-teensy35.menu.keys.pt-br.build.keylayout=PORTUGUESE_BRAZILIAN
-teensy35.menu.keys.rs-rs=Serbian (Latin Only)
-teensy35.menu.keys.rs-rs.build.keylayout=SERBIAN_LATIN_ONLY
-teensy35.menu.keys.es-es=Spanish
-teensy35.menu.keys.es-es.build.keylayout=SPANISH
-teensy35.menu.keys.es-mx=Spanish Latin America
-teensy35.menu.keys.es-mx.build.keylayout=SPANISH_LATIN_AMERICA
-teensy35.menu.keys.sv-se=Swedish
-teensy35.menu.keys.sv-se.build.keylayout=SWEDISH
-teensy35.menu.keys.tr-tr=Turkish (partial)
-teensy35.menu.keys.tr-tr.build.keylayout=TURKISH
-teensy35.menu.keys.en-gb=United Kingdom
-teensy35.menu.keys.en-gb.build.keylayout=UNITED_KINGDOM
-teensy35.menu.keys.usint=US International
-teensy35.menu.keys.usint.build.keylayout=US_INTERNATIONAL
+diecimila.bootloader.tool=avrdude
+diecimila.bootloader.low_fuses=0xFF
+diecimila.bootloader.unlock_bits=0x3F
+diecimila.bootloader.lock_bits=0x0F
 
+diecimila.build.f_cpu=16000000L
+diecimila.build.board=AVR_DUEMILANOVE
+diecimila.build.core=arduino
+diecimila.build.variant=standard
 
-teensy31.name=Teensy 3.2 / 3.1
-teensy31.upload.maximum_size=262144
-teensy31.upload.maximum_data_size=65536
-teensy31.upload.tool=teensyloader
-teensy31.upload.protocol=halfkay
-teensy31.build.board=TEENSY31
-teensy31.build.core=teensy3
-teensy31.build.mcu=mk20dx256
-teensy31.build.warn_data_percentage=97
-teensy31.build.toolchain=arm/bin/
-teensy31.build.command.gcc=arm-none-eabi-gcc
-teensy31.build.command.g++=arm-none-eabi-g++
-teensy31.build.command.ar=arm-none-eabi-gcc-ar
-teensy31.build.command.objcopy=arm-none-eabi-objcopy
-teensy31.build.command.objdump=arm-none-eabi-objdump
-teensy31.build.command.linker=arm-none-eabi-gcc
-teensy31.build.command.size=arm-none-eabi-size
-teensy31.build.flags.common=-g -Wall -ffunction-sections -fdata-sections -nostdlib
-teensy31.build.flags.dep=-MMD
-teensy31.build.flags.optimize=-Os
-teensy31.build.flags.cpu=-mthumb -mcpu=cortex-m4 -fsingle-precision-constant
-teensy31.build.flags.defs=-D__MK20DX256__ -DTEENSYDUINO=147
-teensy31.build.flags.cpp=-fno-exceptions -fpermissive -felide-constructors -std=gnu++14 -Wno-error=narrowing -fno-rtti
-teensy31.build.flags.c=
-teensy31.build.flags.S=-x assembler-with-cpp
-teensy31.build.flags.ld=-Wl,--gc-sections,--relax,--defsym=__rtc_localtime={extra.time.local} "-T{build.core.path}/mk20dx256.ld" -lstdc++
-teensy31.build.flags.libs=-larm_cortexM4l_math -lm
-teensy31.serial.restart_cmd=false
-teensy31.menu.usb.serial=Serial
-teensy31.menu.usb.serial.build.usbtype=USB_SERIAL
-teensy31.menu.usb.keyboard=Keyboard
-teensy31.menu.usb.keyboard.build.usbtype=USB_KEYBOARDONLY
-teensy31.menu.usb.keyboard.fake_serial=teensy_gateway
-teensy31.menu.usb.touch=Keyboard + Touch Screen
-teensy31.menu.usb.touch.build.usbtype=USB_TOUCHSCREEN
-teensy31.menu.usb.touch.fake_serial=teensy_gateway
-teensy31.menu.usb.hidtouch=Keyboard + Mouse + Touch Screen
-teensy31.menu.usb.hidtouch.build.usbtype=USB_HID_TOUCHSCREEN
-teensy31.menu.usb.hidtouch.fake_serial=teensy_gateway
-teensy31.menu.usb.hid=Keyboard + Mouse + Joystick
-teensy31.menu.usb.hid.build.usbtype=USB_HID
-teensy31.menu.usb.hid.fake_serial=teensy_gateway
-teensy31.menu.usb.serialhid=Serial + Keyboard + Mouse + Joystick
-teensy31.menu.usb.serialhid.build.usbtype=USB_SERIAL_HID
-teensy31.menu.usb.midi=MIDI
-teensy31.menu.usb.midi.build.usbtype=USB_MIDI
-teensy31.menu.usb.midi.fake_serial=teensy_gateway
-teensy31.menu.usb.midi4=MIDIx4
-teensy31.menu.usb.midi4.build.usbtype=USB_MIDI4
-teensy31.menu.usb.midi4.fake_serial=teensy_gateway
-teensy31.menu.usb.midi16=MIDIx16
-teensy31.menu.usb.midi16.build.usbtype=USB_MIDI16
-teensy31.menu.usb.midi16.fake_serial=teensy_gateway
-teensy31.menu.usb.serialmidi=Serial + MIDI
-teensy31.menu.usb.serialmidi.build.usbtype=USB_MIDI_SERIAL
-teensy31.menu.usb.serialmidi4=Serial + MIDIx4
-teensy31.menu.usb.serialmidi4.build.usbtype=USB_MIDI4_SERIAL
-teensy31.menu.usb.serialmidi16=Serial + MIDIx16
-teensy31.menu.usb.serialmidi16.build.usbtype=USB_MIDI16_SERIAL
-teensy31.menu.usb.audio=Audio
-teensy31.menu.usb.audio.build.usbtype=USB_AUDIO
-teensy31.menu.usb.audio.fake_serial=teensy_gateway
-teensy31.menu.usb.serialmidiaudio=Serial + MIDI + Audio
-teensy31.menu.usb.serialmidiaudio.build.usbtype=USB_MIDI_AUDIO_SERIAL
-teensy31.menu.usb.serialmidi16audio=Serial + MIDIx16 + Audio
-teensy31.menu.usb.serialmidi16audio.build.usbtype=USB_MIDI16_AUDIO_SERIAL
-teensy31.menu.usb.mtp=MTP Disk (Experimental)
-teensy31.menu.usb.mtp.build.usbtype=USB_MTPDISK
-teensy31.menu.usb.mtp.fake_serial=teensy_gateway
-teensy31.menu.usb.rawhid=Raw HID
-teensy31.menu.usb.rawhid.build.usbtype=USB_RAWHID
-teensy31.menu.usb.rawhid.fake_serial=teensy_gateway
-teensy31.menu.usb.flightsim=Flight Sim Controls
-teensy31.menu.usb.flightsim.build.usbtype=USB_FLIGHTSIM
-teensy31.menu.usb.flightsim.fake_serial=teensy_gateway
-teensy31.menu.usb.flightsimjoystick=Flight Sim Controls + Joystick
-teensy31.menu.usb.flightsimjoystick.build.usbtype=USB_FLIGHTSIM_JOYSTICK
-teensy31.menu.usb.flightsimjoystick.fake_serial=teensy_gateway
-teensy31.menu.usb.everything=All of the Above
-teensy31.menu.usb.everything.build.usbtype=USB_EVERYTHING
-teensy31.menu.usb.disable=No USB
-teensy31.menu.usb.disable.build.usbtype=USB_DISABLED
+## Arduino Duemilanove or Diecimila w/ ATmega328P
+## ----------------------------------------------
+diecimila.menu.cpu.atmega328=ATmega328P
 
-teensy31.menu.speed.96=96 MHz (overclock)
-teensy31.menu.speed.72=72 MHz
-teensy31.menu.speed.48=48 MHz
-teensy31.menu.speed.24=24 MHz
-teensy31.menu.speed.16=16 MHz (No USB)
-teensy31.menu.speed.8=8 MHz (No USB)
-teensy31.menu.speed.4=4 MHz (No USB)
-teensy31.menu.speed.2=2 MHz (No USB)
-teensy31.menu.speed.120=120 MHz (overclock)
-#uncomment these if you want to try faster overclocking
-#teensy31.menu.speed.144=144 MHz (overclock)
-#teensy31.menu.speed.168=168 MHz (overclock)
-teensy31.menu.speed.168.build.fcpu=168000000
-teensy31.menu.speed.144.build.fcpu=144000000
-teensy31.menu.speed.120.build.fcpu=120000000
-teensy31.menu.speed.96.build.fcpu=96000000
-teensy31.menu.speed.72.build.fcpu=72000000
-teensy31.menu.speed.48.build.fcpu=48000000
-teensy31.menu.speed.24.build.fcpu=24000000
-teensy31.menu.speed.16.build.fcpu=16000000
-teensy31.menu.speed.8.build.fcpu=8000000
-teensy31.menu.speed.4.build.fcpu=4000000
-teensy31.menu.speed.2.build.fcpu=2000000
+diecimila.menu.cpu.atmega328.upload.maximum_size=30720
+diecimila.menu.cpu.atmega328.upload.maximum_data_size=2048
+diecimila.menu.cpu.atmega328.upload.speed=57600
 
-teensy31.menu.opt.o2std=Faster
-teensy31.menu.opt.o2std.build.flags.optimize=-O2
-teensy31.menu.opt.o2std.build.flags.ldspecs=
-teensy31.menu.opt.o2lto=Faster with LTO
-teensy31.menu.opt.o2lto.build.flags.optimize=-O2 -flto -fno-fat-lto-objects
-teensy31.menu.opt.o2lto.build.flags.ldspecs=-fuse-linker-plugin
-teensy31.menu.opt.o1std=Fast
-teensy31.menu.opt.o1std.build.flags.optimize=-O1
-teensy31.menu.opt.o1std.build.flags.ldspecs=
-teensy31.menu.opt.o1lto=Fast with LTO
-teensy31.menu.opt.o1lto.build.flags.optimize=-O1 -flto -fno-fat-lto-objects
-teensy31.menu.opt.o1lto.build.flags.ldspecs=-fuse-linker-plugin
-teensy31.menu.opt.o3std=Fastest
-teensy31.menu.opt.o3std.build.flags.optimize=-O3
-teensy31.menu.opt.o3std.build.flags.ldspecs=
-teensy31.menu.opt.o3purestd=Fastest + pure-code
-teensy31.menu.opt.o3purestd.build.flags.optimize=-O3 -mpure-code -D__PURE_CODE__
-teensy31.menu.opt.o3purestd.build.flags.ldspecs=
-teensy31.menu.opt.o3lto=Fastest with LTO
-teensy31.menu.opt.o3lto.build.flags.optimize=-O3 -flto -fno-fat-lto-objects
-teensy31.menu.opt.o3lto.build.flags.ldspecs=-fuse-linker-plugin
-teensy31.menu.opt.o3purelto=Fastest + pure-code with LTO
-teensy31.menu.opt.o3purelto.build.flags.optimize=-O3 -mpure-code -D__PURE_CODE__ -flto -fno-fat-lto-objects
-teensy31.menu.opt.o3purelto.build.flags.ldspecs=-fuse-linker-plugin
-teensy31.menu.opt.ogstd=Debug
-teensy31.menu.opt.ogstd.build.flags.optimize=-Og
-teensy31.menu.opt.ogstd.build.flags.ldspecs=
-teensy31.menu.opt.oglto=Debug with LTO
-teensy31.menu.opt.oglto.build.flags.optimize=-Og -flto -fno-fat-lto-objects
-teensy31.menu.opt.oglto.build.flags.ldspecs=-fuse-linker-plugin
-teensy31.menu.opt.osstd=Smallest Code
-teensy31.menu.opt.osstd.build.flags.optimize=-Os --specs=nano.specs
-teensy31.menu.opt.osstd.build.flags.ldspecs=
-teensy31.menu.opt.oslto=Smallest Code with LTO
-teensy31.menu.opt.oslto.build.flags.optimize=-Os -flto -fno-fat-lto-objects --specs=nano.specs
-teensy31.menu.opt.oslto.build.flags.ldspecs=-fuse-linker-plugin
+diecimila.menu.cpu.atmega328.bootloader.high_fuses=0xDA
+diecimila.menu.cpu.atmega328.bootloader.extended_fuses=0xFD
+diecimila.menu.cpu.atmega328.bootloader.file=atmega/ATmegaBOOT_168_atmega328.hex
 
-teensy31.menu.keys.en-us=US English
-teensy31.menu.keys.en-us.build.keylayout=US_ENGLISH
-teensy31.menu.keys.fr-ca=Canadian French
-teensy31.menu.keys.fr-ca.build.keylayout=CANADIAN_FRENCH
-teensy31.menu.keys.xx-ca=Canadian Multilingual
-teensy31.menu.keys.xx-ca.build.keylayout=CANADIAN_MULTILINGUAL
-teensy31.menu.keys.cz-cz=Czech
-teensy31.menu.keys.cz-cz.build.keylayout=CZECH
-teensy31.menu.keys.da-da=Danish
-teensy31.menu.keys.da-da.build.keylayout=DANISH
-teensy31.menu.keys.fi-fi=Finnish
-teensy31.menu.keys.fi-fi.build.keylayout=FINNISH
-teensy31.menu.keys.fr-fr=French
-teensy31.menu.keys.fr-fr.build.keylayout=FRENCH
-teensy31.menu.keys.fr-be=French Belgian
-teensy31.menu.keys.fr-be.build.keylayout=FRENCH_BELGIAN
-teensy31.menu.keys.fr-ch=French Swiss
-teensy31.menu.keys.fr-ch.build.keylayout=FRENCH_SWISS
-teensy31.menu.keys.de-de=German
-teensy31.menu.keys.de-de.build.keylayout=GERMAN
-teensy31.menu.keys.de-dm=German (Mac)
-teensy31.menu.keys.de-dm.build.keylayout=GERMAN_MAC
-teensy31.menu.keys.de-ch=German Swiss
-teensy31.menu.keys.de-ch.build.keylayout=GERMAN_SWISS
-teensy31.menu.keys.is-is=Icelandic
-teensy31.menu.keys.is-is.build.keylayout=ICELANDIC
-teensy31.menu.keys.en-ie=Irish
-teensy31.menu.keys.en-ie.build.keylayout=IRISH
-teensy31.menu.keys.it-it=Italian
-teensy31.menu.keys.it-it.build.keylayout=ITALIAN
-teensy31.menu.keys.no-no=Norwegian
-teensy31.menu.keys.no-no.build.keylayout=NORWEGIAN
-teensy31.menu.keys.pt-pt=Portuguese
-teensy31.menu.keys.pt-pt.build.keylayout=PORTUGUESE
-teensy31.menu.keys.pt-br=Portuguese Brazilian
-teensy31.menu.keys.pt-br.build.keylayout=PORTUGUESE_BRAZILIAN
-teensy31.menu.keys.rs-rs=Serbian (Latin Only)
-teensy31.menu.keys.rs-rs.build.keylayout=SERBIAN_LATIN_ONLY
-teensy31.menu.keys.es-es=Spanish
-teensy31.menu.keys.es-es.build.keylayout=SPANISH
-teensy31.menu.keys.es-mx=Spanish Latin America
-teensy31.menu.keys.es-mx.build.keylayout=SPANISH_LATIN_AMERICA
-teensy31.menu.keys.sv-se=Swedish
-teensy31.menu.keys.sv-se.build.keylayout=SWEDISH
-teensy31.menu.keys.tr-tr=Turkish (partial)
-teensy31.menu.keys.tr-tr.build.keylayout=TURKISH
-teensy31.menu.keys.en-gb=United Kingdom
-teensy31.menu.keys.en-gb.build.keylayout=UNITED_KINGDOM
-teensy31.menu.keys.usint=US International
-teensy31.menu.keys.usint.build.keylayout=US_INTERNATIONAL
+diecimila.menu.cpu.atmega328.build.mcu=atmega328p
 
-teensy31.vid.0=0x16C0
-teensy31.vid.1=0x16C0
-teensy31.vid.2=0x16C0
-teensy31.vid.3=0x16C0
-teensy31.vid.4=0x16C0
-teensy31.pid.0=0x0483
-teensy31.pid.1=0x0487
-teensy31.pid.2=0x0489
-teensy31.pid.3=0x048A
-teensy31.pid.4=0x0476
+## Arduino Duemilanove or Diecimila w/ ATmega168
+## ---------------------------------------------
+diecimila.menu.cpu.atmega168=ATmega168
 
-teensy30.name=Teensy 3.0
-teensy30.upload.maximum_size=131072
-teensy30.upload.maximum_data_size=16384
-teensy30.upload.tool=teensyloader
-teensy30.upload.protocol=halfkay
-teensy30.build.board=TEENSY30
-teensy30.build.core=teensy3
-teensy30.build.mcu=mk20dx128
-teensy30.build.warn_data_percentage=94
-teensy30.build.toolchain=arm/bin/
-teensy30.build.command.gcc=arm-none-eabi-gcc
-teensy30.build.command.g++=arm-none-eabi-g++
-teensy30.build.command.ar=arm-none-eabi-gcc-ar
-teensy30.build.command.objcopy=arm-none-eabi-objcopy
-teensy30.build.command.objdump=arm-none-eabi-objdump
-teensy30.build.command.linker=arm-none-eabi-gcc
-teensy30.build.command.size=arm-none-eabi-size
-teensy30.build.flags.common=-g -Wall -ffunction-sections -fdata-sections -nostdlib
-teensy30.build.flags.dep=-MMD
-teensy30.build.flags.optimize=-Os
-teensy30.build.flags.cpu=-mthumb -mcpu=cortex-m4 -fsingle-precision-constant
-teensy30.build.flags.defs=-D__MK20DX128__ -DTEENSYDUINO=147
-teensy30.build.flags.cpp=-fno-exceptions -fpermissive -felide-constructors -std=gnu++14 -Wno-error=narrowing -fno-rtti
-teensy30.build.flags.c=
-teensy30.build.flags.S=-x assembler-with-cpp
-teensy30.build.flags.ld=-Wl,--gc-sections,--relax,--defsym=__rtc_localtime={extra.time.local} "-T{build.core.path}/mk20dx128.ld" -lstdc++
-teensy30.build.flags.ldspecs=--specs=nano.specs
-teensy30.build.flags.libs=-larm_cortexM4l_math -lm
-teensy30.serial.restart_cmd=false
+diecimila.menu.cpu.atmega168.upload.maximum_size=14336
+diecimila.menu.cpu.atmega168.upload.maximum_data_size=1024
+diecimila.menu.cpu.atmega168.upload.speed=19200
 
-teensy30.menu.usb.serial=Serial
-teensy30.menu.usb.serial.build.usbtype=USB_SERIAL
-teensy30.menu.usb.keyboard=Keyboard
-teensy30.menu.usb.keyboard.build.usbtype=USB_KEYBOARDONLY
-teensy30.menu.usb.keyboard.fake_serial=teensy_gateway
-teensy30.menu.usb.hid=Keyboard + Mouse + Joystick
-teensy30.menu.usb.hid.build.usbtype=USB_HID
-teensy30.menu.usb.hid.fake_serial=teensy_gateway
-teensy30.menu.usb.serialhid=Serial + Keyboard + Mouse + Joystick
-teensy30.menu.usb.serialhid.build.usbtype=USB_SERIAL_HID
-teensy30.menu.usb.touch=Keyboard + Touch Screen
-teensy30.menu.usb.touch.build.usbtype=USB_TOUCHSCREEN
-teensy30.menu.usb.touch.fake_serial=teensy_gateway
-teensy30.menu.usb.midi=MIDI
-teensy30.menu.usb.midi.build.usbtype=USB_MIDI
-teensy30.menu.usb.midi.fake_serial=teensy_gateway
-teensy30.menu.usb.midi4=MIDIx4
-teensy30.menu.usb.midi4.build.usbtype=USB_MIDI4
-teensy30.menu.usb.midi4.fake_serial=teensy_gateway
-teensy30.menu.usb.serialmidi=Serial + MIDI
-teensy30.menu.usb.serialmidi.build.usbtype=USB_MIDI_SERIAL
-teensy30.menu.usb.serialmidi4=Serial + MIDIx4
-teensy30.menu.usb.serialmidi4.build.usbtype=USB_MIDI4_SERIAL
-teensy30.menu.usb.audio=Audio
-teensy30.menu.usb.audio.build.usbtype=USB_AUDIO
-teensy30.menu.usb.audio.fake_serial=teensy_gateway
-teensy30.menu.usb.serialmidiaudio=Serial + MIDI + Audio
-teensy30.menu.usb.serialmidiaudio.build.usbtype=USB_MIDI_AUDIO_SERIAL
-teensy30.menu.usb.mtp=MTP Disk (Experimental)
-teensy30.menu.usb.mtp.build.usbtype=USB_MTPDISK
-teensy30.menu.usb.mtp.fake_serial=teensy_gateway
-teensy30.menu.usb.rawhid=Raw HID
-teensy30.menu.usb.rawhid.build.usbtype=USB_RAWHID
-teensy30.menu.usb.rawhid.fake_serial=teensy_gateway
-teensy30.menu.usb.flightsim=Flight Sim Controls
-teensy30.menu.usb.flightsim.build.usbtype=USB_FLIGHTSIM
-teensy30.menu.usb.flightsim.fake_serial=teensy_gateway
-teensy30.menu.usb.disable=No USB
-teensy30.menu.usb.disable.build.usbtype=USB_DISABLED
+diecimila.menu.cpu.atmega168.bootloader.high_fuses=0xdd
+diecimila.menu.cpu.atmega168.bootloader.extended_fuses=0xF8
+diecimila.menu.cpu.atmega168.bootloader.file=atmega/ATmegaBOOT_168_diecimila.hex
 
-teensy30.menu.speed.96=96 MHz (overclock)
-teensy30.menu.speed.48=48 MHz
-teensy30.menu.speed.24=24 MHz
-teensy30.menu.speed.96.build.fcpu=96000000
-teensy30.menu.speed.48.build.fcpu=48000000
-teensy30.menu.speed.24.build.fcpu=24000000
+diecimila.menu.cpu.atmega168.build.mcu=atmega168
 
-teensy30.menu.opt.o2std=Faster
-teensy30.menu.opt.o2std.build.flags.optimize=-O2
-teensy30.menu.opt.o2std.build.flags.ldspecs=
-teensy30.menu.opt.o2lto=Faster with LTO
-teensy30.menu.opt.o2lto.build.flags.optimize=-O2 -flto -fno-fat-lto-objects
-teensy30.menu.opt.o2lto.build.flags.ldspecs=-fuse-linker-plugin
-teensy30.menu.opt.o1std=Fast
-teensy30.menu.opt.o1std.build.flags.optimize=-O1
-teensy30.menu.opt.o1std.build.flags.ldspecs=
-teensy30.menu.opt.o1lto=Fast with LTO
-teensy30.menu.opt.o1lto.build.flags.optimize=-O1 -flto -fno-fat-lto-objects
-teensy30.menu.opt.o1lto.build.flags.ldspecs=-fuse-linker-plugin
-teensy30.menu.opt.o3std=Fastest
-teensy30.menu.opt.o3std.build.flags.optimize=-O3
-teensy30.menu.opt.o3std.build.flags.ldspecs=
-teensy30.menu.opt.o3lto=Fastest with LTO
-teensy30.menu.opt.o3lto.build.flags.optimize=-O3 -flto -fno-fat-lto-objects
-teensy30.menu.opt.o3lto.build.flags.ldspecs=-fuse-linker-plugin
-teensy30.menu.opt.ogstd=Debug
-teensy30.menu.opt.ogstd.build.flags.optimize=-Og
-teensy30.menu.opt.ogstd.build.flags.ldspecs=
-teensy30.menu.opt.oglto=Debug with LTO
-teensy30.menu.opt.oglto.build.flags.optimize=-Og -flto -fno-fat-lto-objects
-teensy30.menu.opt.oglto.build.flags.ldspecs=-fuse-linker-plugin
-teensy30.menu.opt.osstd=Smallest Code
-teensy30.menu.opt.osstd.build.flags.optimize=-Os --specs=nano.specs
-teensy30.menu.opt.osstd.build.flags.ldspecs=
-teensy30.menu.opt.oslto=Smallest Code with LTO
-teensy30.menu.opt.oslto.build.flags.optimize=-Os -flto -fno-fat-lto-objects --specs=nano.specs
-teensy30.menu.opt.oslto.build.flags.ldspecs=-fuse-linker-plugin
+##############################################################
 
-teensy30.menu.keys.en-us=US English
-teensy30.menu.keys.en-us.build.keylayout=US_ENGLISH
-teensy30.menu.keys.fr-ca=Canadian French
-teensy30.menu.keys.fr-ca.build.keylayout=CANADIAN_FRENCH
-teensy30.menu.keys.xx-ca=Canadian Multilingual
-teensy30.menu.keys.xx-ca.build.keylayout=CANADIAN_MULTILINGUAL
-teensy30.menu.keys.cz-cz=Czech
-teensy30.menu.keys.cz-cz.build.keylayout=CZECH
-teensy30.menu.keys.da-da=Danish
-teensy30.menu.keys.da-da.build.keylayout=DANISH
-teensy30.menu.keys.fi-fi=Finnish
-teensy30.menu.keys.fi-fi.build.keylayout=FINNISH
-teensy30.menu.keys.fr-fr=French
-teensy30.menu.keys.fr-fr.build.keylayout=FRENCH
-teensy30.menu.keys.fr-be=French Belgian
-teensy30.menu.keys.fr-be.build.keylayout=FRENCH_BELGIAN
-teensy30.menu.keys.fr-ch=French Swiss
-teensy30.menu.keys.fr-ch.build.keylayout=FRENCH_SWISS
-teensy30.menu.keys.de-de=German
-teensy30.menu.keys.de-de.build.keylayout=GERMAN
-teensy30.menu.keys.de-dm=German (Mac)
-teensy30.menu.keys.de-dm.build.keylayout=GERMAN_MAC
-teensy30.menu.keys.de-ch=German Swiss
-teensy30.menu.keys.de-ch.build.keylayout=GERMAN_SWISS
-teensy30.menu.keys.is-is=Icelandic
-teensy30.menu.keys.is-is.build.keylayout=ICELANDIC
-teensy30.menu.keys.en-ie=Irish
-teensy30.menu.keys.en-ie.build.keylayout=IRISH
-teensy30.menu.keys.it-it=Italian
-teensy30.menu.keys.it-it.build.keylayout=ITALIAN
-teensy30.menu.keys.no-no=Norwegian
-teensy30.menu.keys.no-no.build.keylayout=NORWEGIAN
-teensy30.menu.keys.pt-pt=Portuguese
-teensy30.menu.keys.pt-pt.build.keylayout=PORTUGUESE
-teensy30.menu.keys.pt-br=Portuguese Brazilian
-teensy30.menu.keys.pt-br.build.keylayout=PORTUGUESE_BRAZILIAN
-teensy30.menu.keys.rs-rs=Serbian (Latin Only)
-teensy30.menu.keys.rs-rs.build.keylayout=SERBIAN_LATIN_ONLY
-teensy30.menu.keys.es-es=Spanish
-teensy30.menu.keys.es-es.build.keylayout=SPANISH
-teensy30.menu.keys.es-mx=Spanish Latin America
-teensy30.menu.keys.es-mx.build.keylayout=SPANISH_LATIN_AMERICA
-teensy30.menu.keys.sv-se=Swedish
-teensy30.menu.keys.sv-se.build.keylayout=SWEDISH
-teensy30.menu.keys.tr-tr=Turkish (partial)
-teensy30.menu.keys.tr-tr.build.keylayout=TURKISH
-teensy30.menu.keys.en-gb=United Kingdom
-teensy30.menu.keys.en-gb.build.keylayout=UNITED_KINGDOM
-teensy30.menu.keys.usint=US International
-teensy30.menu.keys.usint.build.keylayout=US_INTERNATIONAL
+nano.name=Arduino Nano
 
+nano.upload.tool=avrdude
+nano.upload.protocol=arduino
 
-teensyLC.name=Teensy LC
-teensyLC.upload.maximum_size=63488
-teensyLC.upload.maximum_data_size=8192
-teensyLC.upload.tool=teensyloader
-teensyLC.upload.protocol=halfkay
-teensyLC.build.board=TEENSYLC
-teensyLC.build.core=teensy3
-teensyLC.build.mcu=mkl26z64
-teensyLC.build.warn_data_percentage=88
-teensyLC.build.toolchain=arm/bin/
-teensyLC.build.command.gcc=arm-none-eabi-gcc
-teensyLC.build.command.g++=arm-none-eabi-g++
-teensyLC.build.command.ar=arm-none-eabi-gcc-ar
-teensyLC.build.command.objcopy=arm-none-eabi-objcopy
-teensyLC.build.command.objdump=arm-none-eabi-objdump
-teensyLC.build.command.linker=arm-none-eabi-gcc
-teensyLC.build.command.size=arm-none-eabi-size
-teensyLC.build.flags.common=-g -Wall -ffunction-sections -fdata-sections -nostdlib
-teensyLC.build.flags.dep=-MMD
-teensyLC.build.flags.cpu=-mthumb -mcpu=cortex-m0plus -fsingle-precision-constant
-teensyLC.build.flags.defs=-D__MKL26Z64__ -DTEENSYDUINO=147
-teensyLC.build.flags.cpp=-fno-exceptions -fpermissive -felide-constructors -std=gnu++14 -Wno-error=narrowing -fno-rtti
-teensyLC.build.flags.c=
-teensyLC.build.flags.S=-x assembler-with-cpp
-teensyLC.build.flags.ld=-Wl,--gc-sections,--relax,--defsym=__rtc_localtime={extra.time.local} "-T{build.core.path}/mkl26z64.ld" -lstdc++
-teensyLC.build.flags.libs=-larm_cortexM0l_math -lm
-teensyLC.serial.restart_cmd=false
-teensyLC.menu.usb.serial=Serial
-teensyLC.menu.usb.serial.build.usbtype=USB_SERIAL
-teensyLC.menu.usb.keyboard=Keyboard
-teensyLC.menu.usb.keyboard.build.usbtype=USB_KEYBOARDONLY
-teensyLC.menu.usb.keyboard.fake_serial=teensy_gateway
-teensyLC.menu.usb.hid=Keyboard + Mouse + Joystick
-teensyLC.menu.usb.hid.build.usbtype=USB_HID
-teensyLC.menu.usb.hid.fake_serial=teensy_gateway
-teensyLC.menu.usb.serialhid=Serial + Keyboard + Mouse + Joystick
-teensyLC.menu.usb.serialhid.build.usbtype=USB_SERIAL_HID
-teensyLC.menu.usb.touch=Keyboard + Touch Screen
-teensyLC.menu.usb.touch.build.usbtype=USB_TOUCHSCREEN
-teensyLC.menu.usb.touch.fake_serial=teensy_gateway
-teensyLC.menu.usb.midi=MIDI
-teensyLC.menu.usb.midi.build.usbtype=USB_MIDI
-teensyLC.menu.usb.midi.fake_serial=teensy_gateway
-teensyLC.menu.usb.midi4=MIDIx4
-teensyLC.menu.usb.midi4.build.usbtype=USB_MIDI4
-teensyLC.menu.usb.midi4.fake_serial=teensy_gateway
-teensyLC.menu.usb.serialmidi=Serial + MIDI
-teensyLC.menu.usb.serialmidi.build.usbtype=USB_MIDI_SERIAL
-teensyLC.menu.usb.serialmidi4=Serial + MIDIx4
-teensyLC.menu.usb.serialmidi4.build.usbtype=USB_MIDI4_SERIAL
-teensyLC.menu.usb.mtp=MTP Disk (Experimental)
-teensyLC.menu.usb.mtp.build.usbtype=USB_MTPDISK
-teensyLC.menu.usb.mtp.fake_serial=teensy_gateway
-teensyLC.menu.usb.rawhid=Raw HID
-teensyLC.menu.usb.rawhid.build.usbtype=USB_RAWHID
-teensyLC.menu.usb.rawhid.fake_serial=teensy_gateway
-teensyLC.menu.usb.flightsim=Flight Sim Controls
-teensyLC.menu.usb.flightsim.build.usbtype=USB_FLIGHTSIM
-teensyLC.menu.usb.flightsim.fake_serial=teensy_gateway
-teensyLC.menu.usb.disable=No USB
-teensyLC.menu.usb.disable.build.usbtype=USB_DISABLED
+nano.bootloader.tool=avrdude
+nano.bootloader.unlock_bits=0x3F
+nano.bootloader.lock_bits=0x0F
 
-teensyLC.menu.speed.48=48 MHz
-teensyLC.menu.speed.24=24 MHz
-teensyLC.menu.speed.48.build.fcpu=48000000
-teensyLC.menu.speed.24.build.fcpu=24000000
+nano.build.f_cpu=16000000L
+nano.build.board=AVR_NANO
+nano.build.core=arduino
+nano.build.variant=eightanaloginputs
 
-teensyLC.menu.opt.osstd=Smallest Code
-teensyLC.menu.opt.osstd.build.flags.optimize=-Os --specs=nano.specs
-teensyLC.menu.opt.osstd.build.flags.ldspecs=
-teensyLC.menu.opt.oslto=Smallest Code with LTO
-teensyLC.menu.opt.oslto.build.flags.optimize=-Os -flto -fno-fat-lto-objects --specs=nano.specs
-teensyLC.menu.opt.oslto.build.flags.ldspecs=-fuse-linker-plugin
-teensyLC.menu.opt.ogstd=Debug
-teensyLC.menu.opt.ogstd.build.flags.optimize=-Og
-teensyLC.menu.opt.ogstd.build.flags.ldspecs=
-teensyLC.menu.opt.oglto=Debug with LTO
-teensyLC.menu.opt.oglto.build.flags.optimize=-Og -flto -fno-fat-lto-objects
-teensyLC.menu.opt.oglto.build.flags.ldspecs=-fuse-linker-plugin
-teensyLC.menu.opt.o3std=Fastest
-teensyLC.menu.opt.o3std.build.flags.optimize=-O3
-teensyLC.menu.opt.o3std.build.flags.ldspecs=
-teensyLC.menu.opt.o3lto=Fastest with LTO
-teensyLC.menu.opt.o3lto.build.flags.optimize=-O3 -flto -fno-fat-lto-objects
-teensyLC.menu.opt.o3lto.build.flags.ldspecs=-fuse-linker-plugin
-teensyLC.menu.opt.o2std=Faster
-teensyLC.menu.opt.o2std.build.flags.optimize=-O2
-teensyLC.menu.opt.o2std.build.flags.ldspecs=
-teensyLC.menu.opt.o2lto=Faster with LTO
-teensyLC.menu.opt.o2lto.build.flags.optimize=-O2 -flto -fno-fat-lto-objects
-teensyLC.menu.opt.o2lto.build.flags.ldspecs=-fuse-linker-plugin
-teensyLC.menu.opt.o1std=Fast
-teensyLC.menu.opt.o1std.build.flags.optimize=-O1
-teensyLC.menu.opt.o1std.build.flags.ldspecs=
-teensyLC.menu.opt.o1lto=Fast with LTO
-teensyLC.menu.opt.o1lto.build.flags.optimize=-O1 -flto -fno-fat-lto-objects
-teensyLC.menu.opt.o1lto.build.flags.ldspecs=-fuse-linker-plugin
+## Arduino Nano w/ ATmega328P
+## --------------------------
+nano.menu.cpu.atmega328=ATmega328P
 
-teensyLC.menu.keys.en-us=US English
-teensyLC.menu.keys.en-us.build.keylayout=US_ENGLISH
-teensyLC.menu.keys.fr-ca=Canadian French
-teensyLC.menu.keys.fr-ca.build.keylayout=CANADIAN_FRENCH
-teensyLC.menu.keys.xx-ca=Canadian Multilingual
-teensyLC.menu.keys.xx-ca.build.keylayout=CANADIAN_MULTILINGUAL
-teensyLC.menu.keys.cz-cz=Czech
-teensyLC.menu.keys.cz-cz.build.keylayout=CZECH
-teensyLC.menu.keys.da-da=Danish
-teensyLC.menu.keys.da-da.build.keylayout=DANISH
-teensyLC.menu.keys.fi-fi=Finnish
-teensyLC.menu.keys.fi-fi.build.keylayout=FINNISH
-teensyLC.menu.keys.fr-fr=French
-teensyLC.menu.keys.fr-fr.build.keylayout=FRENCH
-teensyLC.menu.keys.fr-be=French Belgian
-teensyLC.menu.keys.fr-be.build.keylayout=FRENCH_BELGIAN
-teensyLC.menu.keys.fr-ch=French Swiss
-teensyLC.menu.keys.fr-ch.build.keylayout=FRENCH_SWISS
-teensyLC.menu.keys.de-de=German
-teensyLC.menu.keys.de-de.build.keylayout=GERMAN
-teensyLC.menu.keys.de-dm=German (Mac)
-teensyLC.menu.keys.de-dm.build.keylayout=GERMAN_MAC
-teensyLC.menu.keys.de-ch=German Swiss
-teensyLC.menu.keys.de-ch.build.keylayout=GERMAN_SWISS
-teensyLC.menu.keys.is-is=Icelandic
-teensyLC.menu.keys.is-is.build.keylayout=ICELANDIC
-teensyLC.menu.keys.en-ie=Irish
-teensyLC.menu.keys.en-ie.build.keylayout=IRISH
-teensyLC.menu.keys.it-it=Italian
-teensyLC.menu.keys.it-it.build.keylayout=ITALIAN
-teensyLC.menu.keys.no-no=Norwegian
-teensyLC.menu.keys.no-no.build.keylayout=NORWEGIAN
-teensyLC.menu.keys.pt-pt=Portuguese
-teensyLC.menu.keys.pt-pt.build.keylayout=PORTUGUESE
-teensyLC.menu.keys.pt-br=Portuguese Brazilian
-teensyLC.menu.keys.pt-br.build.keylayout=PORTUGUESE_BRAZILIAN
-teensyLC.menu.keys.rs-rs=Serbian (Latin Only)
-teensyLC.menu.keys.rs-rs.build.keylayout=SERBIAN_LATIN_ONLY
-teensyLC.menu.keys.es-es=Spanish
-teensyLC.menu.keys.es-es.build.keylayout=SPANISH
-teensyLC.menu.keys.es-mx=Spanish Latin America
-teensyLC.menu.keys.es-mx.build.keylayout=SPANISH_LATIN_AMERICA
-teensyLC.menu.keys.sv-se=Swedish
-teensyLC.menu.keys.sv-se.build.keylayout=SWEDISH
-teensyLC.menu.keys.tr-tr=Turkish (partial)
-teensyLC.menu.keys.tr-tr.build.keylayout=TURKISH
-teensyLC.menu.keys.en-gb=United Kingdom
-teensyLC.menu.keys.en-gb.build.keylayout=UNITED_KINGDOM
-teensyLC.menu.keys.usint=US International
-teensyLC.menu.keys.usint.build.keylayout=US_INTERNATIONAL
+nano.menu.cpu.atmega328.upload.maximum_size=30720
+nano.menu.cpu.atmega328.upload.maximum_data_size=2048
+nano.menu.cpu.atmega328.upload.speed=115200
+
+nano.menu.cpu.atmega328.bootloader.low_fuses=0xFF
+nano.menu.cpu.atmega328.bootloader.high_fuses=0xDA
+nano.menu.cpu.atmega328.bootloader.extended_fuses=0xFD
+nano.menu.cpu.atmega328.bootloader.file=optiboot/optiboot_atmega328.hex
+
+nano.menu.cpu.atmega328.build.mcu=atmega328p
+
+## Arduino Nano w/ ATmega328P (old bootloader)
+## --------------------------
+nano.menu.cpu.atmega328old=ATmega328P (Old Bootloader)
+
+nano.menu.cpu.atmega328old.upload.maximum_size=30720
+nano.menu.cpu.atmega328old.upload.maximum_data_size=2048
+nano.menu.cpu.atmega328old.upload.speed=57600
+
+nano.menu.cpu.atmega328old.bootloader.low_fuses=0xFF
+nano.menu.cpu.atmega328old.bootloader.high_fuses=0xDA
+nano.menu.cpu.atmega328old.bootloader.extended_fuses=0xFD
+nano.menu.cpu.atmega328old.bootloader.file=atmega/ATmegaBOOT_168_atmega328.hex
+
+nano.menu.cpu.atmega328old.build.mcu=atmega328p
+
+## Arduino Nano w/ ATmega168
+## -------------------------
+nano.menu.cpu.atmega168=ATmega168
+
+nano.menu.cpu.atmega168.upload.maximum_size=14336
+nano.menu.cpu.atmega168.upload.maximum_data_size=1024
+nano.menu.cpu.atmega168.upload.speed=19200
+
+nano.menu.cpu.atmega168.bootloader.low_fuses=0xff
+nano.menu.cpu.atmega168.bootloader.high_fuses=0xdd
+nano.menu.cpu.atmega168.bootloader.extended_fuses=0xF8
+nano.menu.cpu.atmega168.bootloader.file=atmega/ATmegaBOOT_168_diecimila.hex
+
+nano.menu.cpu.atmega168.build.mcu=atmega168
+
+##############################################################
+
+mega.name=Arduino/Genuino Mega or Mega 2560
+
+mega.vid.0=0x2341
+mega.pid.0=0x0010
+mega.vid.1=0x2341
+mega.pid.1=0x0042
+mega.vid.2=0x2A03
+mega.pid.2=0x0010
+mega.vid.3=0x2A03
+mega.pid.3=0x0042
+mega.vid.4=0x2341
+mega.pid.4=0x0210
+mega.vid.5=0x2341
+mega.pid.5=0x0242
+
+mega.upload.tool=avrdude
+mega.upload.maximum_data_size=8192
+
+mega.bootloader.tool=avrdude
+mega.bootloader.low_fuses=0xFF
+mega.bootloader.unlock_bits=0x3F
+mega.bootloader.lock_bits=0x0F
+
+mega.build.f_cpu=16000000L
+mega.build.core=arduino
+mega.build.variant=mega
+# default board may be overridden by the cpu menu
+mega.build.board=AVR_MEGA2560
+
+## Arduino/Genuino Mega w/ ATmega2560
+## -------------------------
+mega.menu.cpu.atmega2560=ATmega2560 (Mega 2560)
+
+mega.menu.cpu.atmega2560.upload.protocol=wiring
+mega.menu.cpu.atmega2560.upload.maximum_size=253952
+mega.menu.cpu.atmega2560.upload.speed=115200
+
+mega.menu.cpu.atmega2560.bootloader.high_fuses=0xD8
+mega.menu.cpu.atmega2560.bootloader.extended_fuses=0xFD
+mega.menu.cpu.atmega2560.bootloader.file=stk500v2/stk500boot_v2_mega2560.hex
+
+mega.menu.cpu.atmega2560.build.mcu=atmega2560
+mega.menu.cpu.atmega2560.build.board=AVR_MEGA2560
+
+## Arduino Mega w/ ATmega1280
+## -------------------------
+mega.menu.cpu.atmega1280=ATmega1280
+
+mega.menu.cpu.atmega1280.upload.protocol=arduino
+mega.menu.cpu.atmega1280.upload.maximum_size=126976
+mega.menu.cpu.atmega1280.upload.speed=57600
+
+mega.menu.cpu.atmega1280.bootloader.high_fuses=0xDA
+mega.menu.cpu.atmega1280.bootloader.extended_fuses=0xF5
+mega.menu.cpu.atmega1280.bootloader.file=atmega/ATmegaBOOT_168_atmega1280.hex
+
+mega.menu.cpu.atmega1280.build.mcu=atmega1280
+mega.menu.cpu.atmega1280.build.board=AVR_MEGA
+
+##############################################################
+
+megaADK.name=Arduino Mega ADK
+
+megaADK.vid.0=0x2341
+megaADK.pid.0=0x003f
+megaADK.vid.1=0x2341
+megaADK.pid.1=0x0044
+megaADK.vid.2=0x2A03
+megaADK.pid.2=0x003f
+megaADK.vid.3=0x2A03
+megaADK.pid.3=0x0044
+
+megaADK.upload.tool=avrdude
+megaADK.upload.protocol=wiring
+megaADK.upload.maximum_size=253952
+megaADK.upload.maximum_data_size=8192
+megaADK.upload.speed=115200
+
+megaADK.bootloader.tool=avrdude
+megaADK.bootloader.low_fuses=0xFF
+megaADK.bootloader.high_fuses=0xD8
+megaADK.bootloader.extended_fuses=0xFD
+megaADK.bootloader.file=stk500v2/stk500boot_v2_mega2560.hex
+megaADK.bootloader.unlock_bits=0x3F
+megaADK.bootloader.lock_bits=0x0F
+
+megaADK.build.mcu=atmega2560
+megaADK.build.f_cpu=16000000L
+megaADK.build.board=AVR_ADK
+megaADK.build.core=arduino
+megaADK.build.variant=mega
+
+##############################################################
+
+leonardo.name=Arduino Leonardo
+leonardo.vid.0=0x2341
+leonardo.pid.0=0x0036
+leonardo.vid.1=0x2341
+leonardo.pid.1=0x8036
+leonardo.vid.2=0x2A03
+leonardo.pid.2=0x0036
+leonardo.vid.3=0x2A03
+leonardo.pid.3=0x8036
+
+leonardo.upload.tool=avrdude
+leonardo.upload.protocol=avr109
+leonardo.upload.maximum_size=28672
+leonardo.upload.maximum_data_size=2560
+leonardo.upload.speed=57600
+leonardo.upload.disable_flushing=true
+leonardo.upload.use_1200bps_touch=true
+leonardo.upload.wait_for_upload_port=true
+
+leonardo.bootloader.tool=avrdude
+leonardo.bootloader.low_fuses=0xff
+leonardo.bootloader.high_fuses=0xd8
+leonardo.bootloader.extended_fuses=0xcb
+leonardo.bootloader.file=caterina/Caterina-Leonardo.hex
+leonardo.bootloader.unlock_bits=0x3F
+leonardo.bootloader.lock_bits=0x2F
+
+leonardo.build.mcu=atmega32u4
+leonardo.build.f_cpu=16000000L
+leonardo.build.vid=0x2341
+leonardo.build.pid=0x8036
+leonardo.build.usb_product="Arduino Leonardo"
+leonardo.build.board=AVR_LEONARDO
+leonardo.build.core=arduino
+leonardo.build.variant=leonardo
+leonardo.build.extra_flags={build.usb_flags}
+
+##############################################################
+
+leonardoeth.name=Arduino Leonardo ETH
+leonardoeth.vid.0=0x2a03
+leonardoeth.pid.0=0x0040
+leonardoeth.vid.1=0x2a03
+leonardoeth.pid.1=0x8040
+
+leonardoeth.upload.tool=avrdude
+leonardoeth.upload.protocol=avr109
+leonardoeth.upload.maximum_size=28672
+leonardoeth.upload.maximum_data_size=2560
+leonardoeth.upload.speed=57600
+leonardoeth.upload.disable_flushing=true
+leonardoeth.upload.use_1200bps_touch=true
+leonardoeth.upload.wait_for_upload_port=true
+
+leonardoeth.bootloader.tool=avrdude
+leonardoeth.bootloader.low_fuses=0xff
+leonardoeth.bootloader.high_fuses=0xd8
+leonardoeth.bootloader.extended_fuses=0xcb
+leonardoeth.bootloader.file=caterina/Caterina-LeonardoEthernet.hex
+leonardoeth.bootloader.unlock_bits=0x3F
+leonardoeth.bootloader.lock_bits=0x2F
+
+leonardoeth.build.mcu=atmega32u4
+leonardoeth.build.f_cpu=16000000L
+leonardoeth.build.vid=0x2a03
+leonardoeth.build.pid=0x8040
+leonardoeth.build.usb_product="Arduino Leonardo ETH"
+leonardoeth.build.board=AVR_LEONARDO_ETH
+leonardoeth.build.core=arduino
+leonardoeth.build.variant=leonardo
+leonardoeth.build.extra_flags={build.usb_flags}
+
+##############################################################
+
+micro.name=Arduino/Genuino Micro
+
+micro.vid.0=0x2341
+micro.pid.0=0x0037
+micro.vid.1=0x2341
+micro.pid.1=0x8037
+micro.vid.2=0x2A03
+micro.pid.2=0x0037
+micro.vid.3=0x2A03
+micro.pid.3=0x8037
+
+micro.vid.4=0x2341
+micro.pid.4=0x0237
+# If the board is a 2341:0237 use 2341:8237 for build and set
+# other parameters as well
+micro.vid.4.build.vid=0x2341
+micro.vid.4.build.pid=0x8237
+micro.vid.4.build.usb_product="Genuino Micro"
+micro.vid.4.bootloader.file=caterina/Caterina-Genuino-Micro.hex
+
+micro.vid.5=0x2341
+micro.pid.5=0x8237
+# If the board is a 2341:8237 use 2341:8237 for build and set
+# other paramters as well
+micro.vid.5.build.vid=0x2341
+micro.vid.5.build.pid=0x8237
+micro.vid.5.build.usb_product="Genuino Micro"
+micro.vid.5.bootloader.file=caterina/Caterina-Genuino-Micro.hex
+
+micro.upload.tool=avrdude
+micro.upload.protocol=avr109
+micro.upload.maximum_size=28672
+micro.upload.maximum_data_size=2560
+micro.upload.speed=57600
+micro.upload.disable_flushing=true
+micro.upload.use_1200bps_touch=true
+micro.upload.wait_for_upload_port=true
+
+micro.bootloader.tool=avrdude
+micro.bootloader.low_fuses=0xff
+micro.bootloader.high_fuses=0xd8
+micro.bootloader.extended_fuses=0xcb
+micro.bootloader.file=caterina/Caterina-Micro.hex
+micro.bootloader.unlock_bits=0x3F
+micro.bootloader.lock_bits=0x2F
+
+micro.build.mcu=atmega32u4
+micro.build.f_cpu=16000000L
+micro.build.vid=0x2341
+micro.build.pid=0x8037
+micro.build.usb_product="Arduino Micro"
+micro.build.board=AVR_MICRO
+micro.build.core=arduino
+micro.build.variant=micro
+micro.build.extra_flags={build.usb_flags}
+
+##############################################################
+
+esplora.name=Arduino Esplora
+esplora.vid.0=0x2341
+esplora.pid.0=0x003C
+esplora.vid.1=0x2341
+esplora.pid.1=0x803C
+esplora.vid.2=0x2A03
+esplora.pid.2=0x003C
+esplora.vid.3=0x2A03
+esplora.pid.3=0x803C
+
+esplora.upload.tool=avrdude
+esplora.upload.protocol=avr109
+esplora.upload.maximum_size=28672
+esplora.upload.maximum_data_size=2560
+esplora.upload.speed=57600
+esplora.upload.disable_flushing=true
+esplora.upload.use_1200bps_touch=true
+esplora.upload.wait_for_upload_port=true
+
+esplora.bootloader.tool=avrdude
+esplora.bootloader.low_fuses=0xff
+esplora.bootloader.high_fuses=0xd8
+esplora.bootloader.extended_fuses=0xcb
+esplora.bootloader.file=caterina/Caterina-Esplora.hex
+esplora.bootloader.unlock_bits=0x3F
+esplora.bootloader.lock_bits=0x2F
+
+esplora.build.mcu=atmega32u4
+esplora.build.f_cpu=16000000L
+esplora.build.vid=0x2341
+esplora.build.pid=0x803c
+esplora.build.usb_product="Arduino Esplora"
+esplora.build.board=AVR_ESPLORA
+esplora.build.core=arduino
+esplora.build.variant=leonardo
+esplora.build.extra_flags={build.usb_flags}
+
+##############################################################
+
+mini.name=Arduino Mini
+
+mini.upload.tool=avrdude
+mini.upload.protocol=arduino
+
+mini.bootloader.tool=avrdude
+mini.bootloader.low_fuses=0xff
+mini.bootloader.unlock_bits=0x3F
+mini.bootloader.lock_bits=0x0F
+
+mini.build.f_cpu=16000000L
+mini.build.board=AVR_MINI
+mini.build.core=arduino
+mini.build.variant=eightanaloginputs
+
+## Arduino Mini w/ ATmega328P
+## --------------------------
+mini.menu.cpu.atmega328=ATmega328P
+
+mini.menu.cpu.atmega328.upload.maximum_size=28672
+mini.menu.cpu.atmega328.upload.maximum_data_size=2048
+mini.menu.cpu.atmega328.upload.speed=115200
+
+mini.menu.cpu.atmega328.bootloader.high_fuses=0xd8
+mini.menu.cpu.atmega328.bootloader.extended_fuses=0xFD
+mini.menu.cpu.atmega328.bootloader.file=optiboot/optiboot_atmega328-Mini.hex
+
+mini.menu.cpu.atmega328.build.mcu=atmega328p
+
+## Arduino Mini w/ ATmega168
+## -------------------------
+mini.menu.cpu.atmega168=ATmega168
+
+mini.menu.cpu.atmega168.upload.maximum_size=14336
+mini.menu.cpu.atmega168.upload.maximum_data_size=1024
+mini.menu.cpu.atmega168.upload.speed=19200
+
+mini.menu.cpu.atmega168.bootloader.high_fuses=0xdd
+mini.menu.cpu.atmega168.bootloader.extended_fuses=0xF8
+mini.menu.cpu.atmega168.bootloader.file=atmega/ATmegaBOOT_168_ng.hex
+
+mini.menu.cpu.atmega168.build.mcu=atmega168
+
+##############################################################
+
+ethernet.name=Arduino Ethernet
+
+ethernet.upload.tool=avrdude
+ethernet.upload.protocol=arduino
+ethernet.upload.maximum_size=32256
+ethernet.upload.maximum_data_size=2048
+ethernet.upload.speed=115200
+
+ethernet.bootloader.tool=avrdude
+ethernet.bootloader.low_fuses=0xff
+ethernet.bootloader.high_fuses=0xde
+ethernet.bootloader.extended_fuses=0xFD
+ethernet.bootloader.file=optiboot/optiboot_atmega328.hex
+ethernet.bootloader.unlock_bits=0x3F
+ethernet.bootloader.lock_bits=0x0F
+
+ethernet.build.variant=ethernet
+ethernet.build.mcu=atmega328p
+ethernet.build.f_cpu=16000000L
+ethernet.build.board=AVR_ETHERNET
+ethernet.build.core=arduino
+
+##############################################################
+
+fio.name=Arduino Fio
+
+fio.upload.tool=avrdude
+fio.upload.protocol=arduino
+fio.upload.maximum_size=30720
+fio.upload.maximum_data_size=2048
+fio.upload.speed=57600
+
+fio.bootloader.tool=avrdude
+fio.bootloader.low_fuses=0xFF
+fio.bootloader.high_fuses=0xDA
+fio.bootloader.extended_fuses=0xFD
+fio.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex
+fio.bootloader.unlock_bits=0x3F
+fio.bootloader.lock_bits=0x0F
+
+fio.build.mcu=atmega328p
+fio.build.f_cpu=8000000L
+fio.build.board=AVR_FIO
+fio.build.core=arduino
+fio.build.variant=eightanaloginputs
+
+##############################################################
+
+bt.name=Arduino BT
+
+bt.upload.tool=avrdude
+bt.upload.protocol=arduino
+bt.upload.speed=19200
+bt.upload.disable_flushing=true
+
+bt.bootloader.tool=avrdude
+bt.bootloader.low_fuses=0xff
+bt.bootloader.unlock_bits=0x3F
+bt.bootloader.lock_bits=0x0F
+
+bt.build.f_cpu=16000000L
+bt.build.board=AVR_BT
+bt.build.core=arduino
+bt.build.variant=eightanaloginputs
+
+## Arduino BT w/ ATmega328P
+## ------------------------
+bt.menu.cpu.atmega328=ATmega328P
+bt.menu.cpu.atmega328.upload.maximum_size=28672
+bt.menu.cpu.atmega328.upload.maximum_data_size=2048
+
+bt.menu.cpu.atmega328.bootloader.high_fuses=0xd8
+bt.menu.cpu.atmega328.bootloader.extended_fuses=0xFD
+bt.menu.cpu.atmega328.bootloader.file=bt/ATmegaBOOT_168_atmega328_bt.hex
+
+bt.menu.cpu.atmega328.build.mcu=atmega328p
+
+## Arduino BT w/ ATmega168
+## -----------------------
+bt.menu.cpu.atmega168=ATmega168
+bt.menu.cpu.atmega168.upload.maximum_size=14336
+bt.menu.cpu.atmega168.upload.maximum_data_size=1024
+
+bt.menu.cpu.atmega168.bootloader.high_fuses=0xdd
+bt.menu.cpu.atmega168.bootloader.extended_fuses=0xF8
+bt.menu.cpu.atmega168.bootloader.file=bt/ATmegaBOOT_168.hex
+
+bt.menu.cpu.atmega168.build.mcu=atmega168
+
+##############################################################
+
+LilyPadUSB.name=LilyPad Arduino USB
+LilyPadUSB.vid.0=0x1B4F
+LilyPadUSB.pid.0=0x9207
+LilyPadUSB.vid.1=0x1B4F
+LilyPadUSB.pid.1=0x9208
+
+LilyPadUSB.upload.tool=avrdude
+LilyPadUSB.upload.protocol=avr109
+LilyPadUSB.upload.maximum_size=28672
+LilyPadUSB.upload.maximum_data_size=2560
+LilyPadUSB.upload.speed=57600
+LilyPadUSB.upload.disable_flushing=true
+LilyPadUSB.upload.use_1200bps_touch=true
+LilyPadUSB.upload.wait_for_upload_port=true
+
+LilyPadUSB.bootloader.tool=avrdude
+LilyPadUSB.bootloader.low_fuses=0xff
+LilyPadUSB.bootloader.high_fuses=0xd8
+LilyPadUSB.bootloader.extended_fuses=0xce
+LilyPadUSB.bootloader.file=caterina-LilyPadUSB/Caterina-LilyPadUSB.hex
+LilyPadUSB.bootloader.unlock_bits=0x3F
+LilyPadUSB.bootloader.lock_bits=0x2F
+
+LilyPadUSB.build.mcu=atmega32u4
+LilyPadUSB.build.f_cpu=8000000L
+LilyPadUSB.build.vid=0x1B4F
+LilyPadUSB.build.pid=0x9208
+LilyPadUSB.build.usb_product="LilyPad USB"
+LilyPadUSB.build.board=AVR_LILYPAD_USB
+LilyPadUSB.build.core=arduino
+LilyPadUSB.build.variant=leonardo
+LilyPadUSB.build.extra_flags={build.usb_flags}
+
+##############################################################
+
+lilypad.name=LilyPad Arduino
+
+lilypad.upload.tool=avrdude
+lilypad.upload.protocol=arduino
+
+lilypad.bootloader.tool=avrdude
+lilypad.bootloader.unlock_bits=0x3F
+lilypad.bootloader.lock_bits=0x0F
+
+lilypad.build.f_cpu=8000000L
+lilypad.build.board=AVR_LILYPAD
+lilypad.build.core=arduino
+lilypad.build.variant=standard
+
+## LilyPad Arduino w/ ATmega328P
+## -----------------------------
+lilypad.menu.cpu.atmega328=ATmega328P
+
+lilypad.menu.cpu.atmega328.upload.maximum_size=30720
+lilypad.menu.cpu.atmega328.upload.maximum_data_size=2048
+lilypad.menu.cpu.atmega328.upload.speed=57600
+
+lilypad.menu.cpu.atmega328.bootloader.low_fuses=0xFF
+lilypad.menu.cpu.atmega328.bootloader.high_fuses=0xDA
+lilypad.menu.cpu.atmega328.bootloader.extended_fuses=0xFD
+lilypad.menu.cpu.atmega328.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex
+
+lilypad.menu.cpu.atmega328.build.mcu=atmega328p
+
+## LilyPad Arduino w/ ATmega168
+## ----------------------------
+lilypad.menu.cpu.atmega168=ATmega168
+
+lilypad.menu.cpu.atmega168.upload.maximum_size=14336
+lilypad.menu.cpu.atmega168.upload.maximum_data_size=1024
+lilypad.menu.cpu.atmega168.upload.speed=19200
+
+lilypad.menu.cpu.atmega168.bootloader.low_fuses=0xe2
+lilypad.menu.cpu.atmega168.bootloader.high_fuses=0xdd
+lilypad.menu.cpu.atmega168.bootloader.extended_fuses=0xF8
+lilypad.menu.cpu.atmega168.bootloader.file=lilypad/LilyPadBOOT_168.hex
+
+lilypad.menu.cpu.atmega168.build.mcu=atmega168
+
+##############################################################
+
+pro.name=Arduino Pro or Pro Mini
+
+pro.upload.tool=avrdude
+pro.upload.protocol=arduino
+
+pro.bootloader.tool=avrdude
+pro.bootloader.unlock_bits=0x3F
+pro.bootloader.lock_bits=0x0F
+
+pro.build.board=AVR_PRO
+pro.build.core=arduino
+pro.build.variant=eightanaloginputs
+
+## Arduino Pro or Pro Mini (5V, 16 MHz) w/ ATmega328P
+## --------------------------------------------------
+pro.menu.cpu.16MHzatmega328=ATmega328P (5V, 16 MHz)
+
+pro.menu.cpu.16MHzatmega328.upload.maximum_size=30720
+pro.menu.cpu.16MHzatmega328.upload.maximum_data_size=2048
+pro.menu.cpu.16MHzatmega328.upload.speed=57600
+
+pro.menu.cpu.16MHzatmega328.bootloader.low_fuses=0xFF
+pro.menu.cpu.16MHzatmega328.bootloader.high_fuses=0xDA
+pro.menu.cpu.16MHzatmega328.bootloader.extended_fuses=0xFD
+pro.menu.cpu.16MHzatmega328.bootloader.file=atmega/ATmegaBOOT_168_atmega328.hex
+
+pro.menu.cpu.16MHzatmega328.build.mcu=atmega328p
+pro.menu.cpu.16MHzatmega328.build.f_cpu=16000000L
+
+## Arduino Pro or Pro Mini (3.3V, 8 MHz) w/ ATmega328P
+## ---------------------------------------------------
+pro.menu.cpu.8MHzatmega328=ATmega328P (3.3V, 8 MHz)
+
+pro.menu.cpu.8MHzatmega328.upload.maximum_size=30720
+pro.menu.cpu.8MHzatmega328.upload.maximum_data_size=2048
+pro.menu.cpu.8MHzatmega328.upload.speed=57600
+
+pro.menu.cpu.8MHzatmega328.bootloader.low_fuses=0xFF
+pro.menu.cpu.8MHzatmega328.bootloader.high_fuses=0xDA
+pro.menu.cpu.8MHzatmega328.bootloader.extended_fuses=0xFD
+pro.menu.cpu.8MHzatmega328.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex
+
+pro.menu.cpu.8MHzatmega328.build.mcu=atmega328p
+pro.menu.cpu.8MHzatmega328.build.f_cpu=8000000L
+
+## Arduino Pro or Pro Mini (5V, 16 MHz) w/ ATmega168
+## -------------------------------------------------
+pro.menu.cpu.16MHzatmega168=ATmega168 (5V, 16 MHz)
+
+pro.menu.cpu.16MHzatmega168.upload.maximum_size=14336
+pro.menu.cpu.16MHzatmega168.upload.maximum_data_size=1024
+pro.menu.cpu.16MHzatmega168.upload.speed=19200
+
+pro.menu.cpu.16MHzatmega168.bootloader.low_fuses=0xff
+pro.menu.cpu.16MHzatmega168.bootloader.high_fuses=0xdd
+pro.menu.cpu.16MHzatmega168.bootloader.extended_fuses=0xF8
+pro.menu.cpu.16MHzatmega168.bootloader.file=atmega/ATmegaBOOT_168_diecimila.hex
+
+pro.menu.cpu.16MHzatmega168.build.mcu=atmega168
+pro.menu.cpu.16MHzatmega168.build.f_cpu=16000000L
+
+## Arduino Pro or Pro Mini (3.3V, 8 MHz) w/ ATmega168
+## --------------------------------------------------
+pro.menu.cpu.8MHzatmega168=ATmega168 (3.3V, 8 MHz)
+
+pro.menu.cpu.8MHzatmega168.upload.maximum_size=14336
+pro.menu.cpu.8MHzatmega168.upload.maximum_data_size=1024
+pro.menu.cpu.8MHzatmega168.upload.speed=19200
+
+pro.menu.cpu.8MHzatmega168.bootloader.low_fuses=0xc6
+pro.menu.cpu.8MHzatmega168.bootloader.high_fuses=0xdd
+pro.menu.cpu.8MHzatmega168.bootloader.extended_fuses=0xF8
+pro.menu.cpu.8MHzatmega168.bootloader.file=atmega/ATmegaBOOT_168_pro_8MHz.hex
+
+pro.menu.cpu.8MHzatmega168.build.mcu=atmega168
+pro.menu.cpu.8MHzatmega168.build.f_cpu=8000000L
+
+##############################################################
+
+atmegang.name=Arduino NG or older
+
+atmegang.upload.tool=avrdude
+atmegang.upload.protocol=arduino
+atmegang.upload.speed=19200
+
+atmegang.bootloader.tool=avrdude
+atmegang.bootloader.unlock_bits=0x3F
+atmegang.bootloader.lock_bits=0x0F
+
+atmegang.build.mcu=atmegang
+atmegang.build.f_cpu=16000000L
+atmegang.build.board=AVR_NG
+atmegang.build.core=arduino
+atmegang.build.variant=standard
+
+## Arduino NG or older w/ ATmega168
+## --------------------------------
+atmegang.menu.cpu.atmega168=ATmega168
+
+atmegang.menu.cpu.atmega168.upload.maximum_size=14336
+atmegang.menu.cpu.atmega168.upload.maximum_data_size=1024
+
+atmegang.menu.cpu.atmega168.bootloader.low_fuses=0xff
+atmegang.menu.cpu.atmega168.bootloader.high_fuses=0xdd
+atmegang.menu.cpu.atmega168.bootloader.extended_fuses=0xF8
+atmegang.menu.cpu.atmega168.bootloader.file=atmega/ATmegaBOOT_168_ng.hex
+
+atmegang.menu.cpu.atmega168.build.mcu=atmega168
+
+## Arduino NG or older w/ ATmega8
+## ------------------------------
+atmegang.menu.cpu.atmega8=ATmega8
+
+atmegang.menu.cpu.atmega8.upload.maximum_size=7168
+atmegang.menu.cpu.atmega8.upload.maximum_data_size=1024
+
+atmegang.menu.cpu.atmega8.bootloader.low_fuses=0xdf
+atmegang.menu.cpu.atmega8.bootloader.high_fuses=0xca
+atmegang.menu.cpu.atmega8.bootloader.extended_fuses=
+atmegang.menu.cpu.atmega8.bootloader.file=atmega8/ATmegaBOOT-prod-firmware-2009-11-07.hex
+
+atmegang.menu.cpu.atmega8.build.mcu=atmega8
+
+##############################################################
+
+robotControl.name=Arduino Robot Control
+robotControl.vid.0=0x2341
+robotControl.pid.0=0x0038
+robotControl.vid.1=0x2341
+robotControl.pid.1=0x8038
+robotControl.vid.2=0x2A03
+robotControl.pid.2=0x0038
+robotControl.vid.3=0x2A03
+robotControl.pid.3=0x8038
+
+robotControl.upload.tool=avrdude
+robotControl.upload.protocol=avr109
+robotControl.upload.maximum_size=28672
+robotControl.upload.maximum_data_size=2560
+robotControl.upload.speed=57600
+robotControl.upload.disable_flushing=true
+robotControl.upload.use_1200bps_touch=true
+robotControl.upload.wait_for_upload_port=true
+
+robotControl.bootloader.tool=avrdude
+robotControl.bootloader.low_fuses=0xff
+robotControl.bootloader.high_fuses=0xd8
+robotControl.bootloader.extended_fuses=0xcb
+robotControl.bootloader.file=caterina-Arduino_Robot/Caterina-Robot-Control.hex
+robotControl.bootloader.unlock_bits=0x3F
+robotControl.bootloader.lock_bits=0x2F
+
+robotControl.build.mcu=atmega32u4
+robotControl.build.f_cpu=16000000L
+robotControl.build.vid=0x2341
+robotControl.build.pid=0x8038
+robotControl.build.usb_product="Robot Control"
+robotControl.build.board=AVR_ROBOT_CONTROL
+robotControl.build.core=arduino
+robotControl.build.variant=robot_control
+robotControl.build.extra_flags={build.usb_flags}
+
+##############################################################
+
+robotMotor.name=Arduino Robot Motor
+robotMotor.vid.0=0x2341
+robotMotor.pid.0=0x0039
+robotMotor.vid.1=0x2341
+robotMotor.pid.1=0x8039
+robotMotor.vid.2=0x2A03
+robotMotor.pid.2=0x0039
+robotMotor.vid.3=0x2A03
+robotMotor.pid.3=0x8039
+
+robotMotor.upload.tool=avrdude
+robotMotor.upload.protocol=avr109
+robotMotor.upload.maximum_size=28672
+robotMotor.upload.maximum_data_size=2560
+robotMotor.upload.speed=57600
+robotMotor.upload.disable_flushing=true
+robotMotor.upload.use_1200bps_touch=true
+robotMotor.upload.wait_for_upload_port=true
+
+robotMotor.bootloader.tool=avrdude
+robotMotor.bootloader.low_fuses=0xff
+robotMotor.bootloader.high_fuses=0xd8
+robotMotor.bootloader.extended_fuses=0xcb
+robotMotor.bootloader.file=caterina-Arduino_Robot/Caterina-Robot-Motor.hex
+robotMotor.bootloader.unlock_bits=0x3F
+robotMotor.bootloader.lock_bits=0x2F
+
+robotMotor.build.mcu=atmega32u4
+robotMotor.build.f_cpu=16000000L
+robotMotor.build.vid=0x2341
+robotMotor.build.pid=0x8039
+robotMotor.build.usb_product="Robot Motor"
+robotMotor.build.board=AVR_ROBOT_MOTOR
+robotMotor.build.core=arduino
+robotMotor.build.variant=robot_motor
+robotMotor.build.extra_flags={build.usb_flags}
+
+##############################################################
+
+gemma.vid.0=0x2341
+gemma.pid.0=0x0c9f
+
+gemma.name=Arduino Gemma
+
+gemma.bootloader.low_fuses=0xF1
+gemma.bootloader.high_fuses=0xD5
+gemma.bootloader.extended_fuses=0xFE
+gemma.bootloader.tool=avrdude
+gemma.bootloader.lock_bits=
+gemma.bootloader.unlock_bits=
+gemma.bootloader.file=gemma/gemma_v1.hex
+
+gemma.build.mcu=attiny85
+gemma.build.f_cpu=8000000L
+gemma.build.core=arduino
+gemma.build.variant=gemma
+gemma.build.board=AVR_GEMMA
+
+gemma.upload.tool=avrdude
+gemma.upload.maximum_size=5310
+
+##############################################################
+
+# Adafruit Circuit Playground 32u4 w/Caterina Configuration
+circuitplay32u4cat.name=Adafruit Circuit Playground
+circuitplay32u4cat.bootloader.low_fuses=0xff
+circuitplay32u4cat.bootloader.high_fuses=0xd8
+circuitplay32u4cat.bootloader.extended_fuses=0xcb
+circuitplay32u4cat.bootloader.file=caterina/Caterina-Circuitplay32u4.hex
+circuitplay32u4cat.bootloader.unlock_bits=0x3F
+circuitplay32u4cat.bootloader.lock_bits=0x2F
+circuitplay32u4cat.bootloader.tool=avrdude
+circuitplay32u4cat.build.mcu=atmega32u4
+circuitplay32u4cat.build.f_cpu=8000000L
+circuitplay32u4cat.build.vid=0x239A
+circuitplay32u4cat.build.pid=0x8011
+circuitplay32u4cat.build.core=arduino
+circuitplay32u4cat.build.variant=circuitplay32u4
+circuitplay32u4cat.build.board=AVR_CIRCUITPLAY
+circuitplay32u4cat.build.usb_product="Circuit Playground"
+circuitplay32u4cat.build.usb_manufacturer="Adafruit"
+circuitplay32u4cat.build.extra_flags={build.usb_flags}
+circuitplay32u4cat.upload.protocol=avr109
+circuitplay32u4cat.upload.maximum_size=28672
+circuitplay32u4cat.upload.speed=57600
+circuitplay32u4cat.upload.disable_flushing=true
+circuitplay32u4cat.upload.use_1200bps_touch=true
+circuitplay32u4cat.upload.wait_for_upload_port=true
+circuitplay32u4cat.upload.tool=avrdude
+circuitplay32u4cat.vid.0=0x239A
+circuitplay32u4cat.pid.0=0x8011
+
+##############################################################
+
+yunmini.name=Arduino Yún Mini
+yunmini.upload.via_ssh=true
+
+yunmini.vid.0=0x2a03
+yunmini.pid.0=0x0050
+yunmini.vid.1=0x2a03
+yunmini.pid.1=0x8050
+
+yunmini.upload.tool=avrdude
+yunmini.upload.protocol=avr109
+yunmini.upload.maximum_size=28672
+yunmini.upload.maximum_data_size=2560
+yunmini.upload.speed=57600
+yunmini.upload.disable_flushing=true
+yunmini.upload.use_1200bps_touch=true
+yunmini.upload.wait_for_upload_port=true
+
+yunmini.bootloader.tool=avrdude
+yunmini.bootloader.low_fuses=0xff
+yunmini.bootloader.high_fuses=0xd8
+yunmini.bootloader.extended_fuses=0xfb
+yunmini.bootloader.file=caterina/Caterina-Yunmini.hex
+yunmini.bootloader.unlock_bits=0x3F
+yunmini.bootloader.lock_bits=0x2F
+
+yunmini.build.mcu=atmega32u4
+yunmini.build.f_cpu=16000000L
+yunmini.build.vid=0x2a03
+yunmini.build.pid=0x8050
+yunmini.build.usb_product="Arduino Yún Mini"
+yunmini.build.board=AVR_YUNMINI
+yunmini.build.core=arduino
+yunmini.build.variant=yun
+yunmini.build.extra_flags={build.usb_flags}
+
+##############################################################
+
+chiwawa.name=Arduino Industrial 101
+chiwawa.upload.via_ssh=true
+
+chiwawa.vid.0=0x2a03
+chiwawa.pid.0=0x0056
+chiwawa.vid.1=0x2a03
+chiwawa.pid.1=0x8056
+
+chiwawa.upload.tool=avrdude
+chiwawa.upload.protocol=avr109
+chiwawa.upload.maximum_size=28672
+chiwawa.upload.maximum_data_size=2560
+chiwawa.upload.speed=57600
+chiwawa.upload.disable_flushing=true
+chiwawa.upload.use_1200bps_touch=true
+chiwawa.upload.wait_for_upload_port=true
+
+chiwawa.bootloader.tool=avrdude
+chiwawa.bootloader.low_fuses=0xff
+chiwawa.bootloader.high_fuses=0xd8
+chiwawa.bootloader.extended_fuses=0xfb
+chiwawa.bootloader.file=caterina/Caterina-Industrial101.hex
+chiwawa.bootloader.unlock_bits=0x3F
+chiwawa.bootloader.lock_bits=0x2F
+
+chiwawa.build.mcu=atmega32u4
+chiwawa.build.f_cpu=16000000L
+chiwawa.build.vid=0x2a03
+chiwawa.build.pid=0x8056
+chiwawa.build.usb_product="Arduino Industrial 101"
+chiwawa.build.board=AVR_INDUSTRIAL101
+chiwawa.build.core=arduino
+chiwawa.build.variant=yun
+chiwawa.build.extra_flags={build.usb_flags}
+
+##############################################################
+
+one.name=Linino One
+one.upload.via_ssh=true
+
+one.vid.0=0x2a03
+one.pid.0=0x0001
+one.vid.1=0x2a03
+one.pid.1=0x8001
+
+one.upload.tool=avrdude
+one.upload.protocol=avr109
+one.upload.maximum_size=28672
+one.upload.maximum_data_size=2560
+one.upload.speed=57600
+one.upload.disable_flushing=true
+one.upload.use_1200bps_touch=true
+one.upload.wait_for_upload_port=true
+
+one.bootloader.tool=avrdude
+one.bootloader.low_fuses=0xff
+one.bootloader.high_fuses=0xd8
+one.bootloader.extended_fuses=0xfb
+one.bootloader.file=caterina/Caterina-LininoOne.hex
+one.bootloader.unlock_bits=0x3F
+one.bootloader.lock_bits=0x2F
+
+one.build.mcu=atmega32u4
+one.build.f_cpu=16000000L
+one.build.vid=0x2a03
+one.build.pid=0x8001
+one.build.usb_product="Linino One"
+one.build.board=AVR_LININO_ONE
+one.build.core=arduino
+one.build.variant=yun
+one.build.extra_flags={build.usb_flags}
+
+##############################################################
+
+unowifi.name=Arduino Uno WiFi
+unowifi.vid.0=0x2A03
+unowifi.pid.0=0x0057
+
+unowifi.upload.tool=avrdude
+unowifi.upload.protocol=arduino
+unowifi.upload.maximum_size=32256
+unowifi.upload.maximum_data_size=2048
+unowifi.upload.speed=115200
+unowifi.upload.network.endpoint_upload=/pgm/upload
+unowifi.upload.network.endpoint_sync=/pgm/sync
+unowifi.upload.network.sync_return=204:SYNC
+unowifi.upload.network.endpoint_reset=/log/reset
+unowifi.upload.network.port=80
+
+unowifi.bootloader.tool=avrdude
+unowifi.bootloader.low_fuses=0xFF
+unowifi.bootloader.high_fuses=0xDE
+unowifi.bootloader.extended_fuses=0x05
+unowifi.bootloader.unlock_bits=0x3F
+unowifi.bootloader.lock_bits=0x0F
+unowifi.bootloader.file=optiboot/optiboot_atmega328.hex
+
+unowifi.build.mcu=atmega328p
+unowifi.build.f_cpu=16000000L
+unowifi.build.board=AVR_UNO_WIFI_DEV_ED
+unowifi.build.core=arduino
+unowifi.build.variant=standard
+unowifi.build.esp_ch_uart_br=19200
+unowifi.build.extra_flags=-DESP_CH_UART -DESP_CH_UART_BR={build.esp_ch_uart_br}
