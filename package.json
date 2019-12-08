@@ -1,6 +1,6 @@
 {
-    "name": "framework-N10",
-    "description": "Arduino Wiring-based Framework (AVR Core 1.6)",
+    "description":"Framework N21 Arduino For AVR Core",
+    "name": "framework-N21",
     "url": "https://www.arduino.cc/en/Main/Software",
     "version": "1.0.0"
 }
