@@ -1,6 +1,6 @@
 {
-    "name":"KiCad",
-    "type":"EDA",
+    "name":"vscode",
+    "type":"edit",
     "base":"*",
     "url":"https://github.com/OS-Q/S01",
     "version":"1.0.0"
