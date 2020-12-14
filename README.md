@@ -1,13 +1,8 @@
-﻿# [Framework N21](https://github.com/OS-Q/N21)
+﻿# [KiCad](https://github.com/OS-Q/S01)
 
 [![sites](http://182.61.61.133/link/resources/OSQ.png)](http://www.OS-Q.com)
+### [简介](https://github.com/OS-Q/S01/wiki)
 
-#### 关于系统架构：[OS-Q](https://github.com/OS-Q)
-#### 归属边缘体系：[EDGE-Q](https://github.com/EDGE-Q)
+[KiCad](hhttps://kicad.org/) 是一个GPL的EDA(Electronic Design Automation)软件包
 
-### [Framework 描述](https://github.com/OS-Q/N21/wiki) 
-
-[Framework N21](https://github.com/OS-Q/N21) 基于PlatformIO平台，应用[AVR Arduino](https://www.arduino.cc/en/Main/Software) 框架
-
-### [OS-Q = Open Solutions | Open Source |  Operating System ](http://www.OS-Q.com/N21)
-####  2019-9-9
+### [OS-Q = Open Source & Operating System ](http://www.OS-Q.com)
